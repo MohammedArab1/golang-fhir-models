@@ -30,8 +30,8 @@ type Group struct {
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Active            *bool                 `bson:"active,omitempty" json:"active,omitempty"`
-	Type              GroupType             `bson:"type" json:"type"`
-	Actual            bool                  `bson:"actual" json:"actual"`
+	Type              GroupType             `bson:"type,omitempty" json:"type,omitempty"`
+	Actual            bool                  `bson:"actual,omitempty" json:"actual,omitempty"`
 	Code              *CodeableConcept      `bson:"code,omitempty" json:"code,omitempty"`
 	Name              *string               `bson:"name,omitempty" json:"name,omitempty"`
 	Quantity          *int                  `bson:"quantity,omitempty" json:"quantity,omitempty"`
@@ -43,20 +43,20 @@ type GroupCharacteristic struct {
 	Id                   *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                 CodeableConcept `bson:"code" json:"code"`
-	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept" json:"valueCodeableConcept"`
-	ValueBoolean         bool            `bson:"valueBoolean" json:"valueBoolean"`
-	ValueQuantity        Quantity        `bson:"valueQuantity" json:"valueQuantity"`
-	ValueRange           Range           `bson:"valueRange" json:"valueRange"`
-	ValueReference       Reference       `bson:"valueReference" json:"valueReference"`
-	Exclude              bool            `bson:"exclude" json:"exclude"`
+	Code                 CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
+	ValueBoolean         bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueQuantity        Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueRange           Range           `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
+	ValueReference       Reference       `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
+	Exclude              bool            `bson:"exclude,omitempty" json:"exclude,omitempty"`
 	Period               *Period         `bson:"period,omitempty" json:"period,omitempty"`
 }
 type GroupMember struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Entity            Reference   `bson:"entity" json:"entity"`
+	Entity            Reference   `bson:"entity,omitempty" json:"entity,omitempty"`
 	Period            *Period     `bson:"period,omitempty" json:"period,omitempty"`
 	Inactive          *bool       `bson:"inactive,omitempty" json:"inactive,omitempty"`
 }

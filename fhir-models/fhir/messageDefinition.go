@@ -34,9 +34,9 @@ type MessageDefinition struct {
 	Name              *string                            `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string                            `bson:"title,omitempty" json:"title,omitempty"`
 	Replaces          []string                           `bson:"replaces,omitempty" json:"replaces,omitempty"`
-	Status            PublicationStatus                  `bson:"status" json:"status"`
+	Status            PublicationStatus                  `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool                              `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              string                             `bson:"date" json:"date"`
+	Date              string                             `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                            `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail                    `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                            `bson:"description,omitempty" json:"description,omitempty"`
@@ -46,8 +46,8 @@ type MessageDefinition struct {
 	Copyright         *string                            `bson:"copyright,omitempty" json:"copyright,omitempty"`
 	Base              *string                            `bson:"base,omitempty" json:"base,omitempty"`
 	Parent            []string                           `bson:"parent,omitempty" json:"parent,omitempty"`
-	EventCoding       Coding                             `bson:"eventCoding" json:"eventCoding"`
-	EventUri          string                             `bson:"eventUri" json:"eventUri"`
+	EventCoding       Coding                             `bson:"eventCoding,omitempty" json:"eventCoding,omitempty"`
+	EventUri          string                             `bson:"eventUri,omitempty" json:"eventUri,omitempty"`
 	Category          *MessageSignificanceCategory       `bson:"category,omitempty" json:"category,omitempty"`
 	Focus             []MessageDefinitionFocus           `bson:"focus,omitempty" json:"focus,omitempty"`
 	ResponseRequired  *string                            `bson:"responseRequired,omitempty" json:"responseRequired,omitempty"`
@@ -58,16 +58,16 @@ type MessageDefinitionFocus struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              ResourceType `bson:"code" json:"code"`
+	Code              ResourceType `bson:"code,omitempty" json:"code,omitempty"`
 	Profile           *string      `bson:"profile,omitempty" json:"profile,omitempty"`
-	Min               int          `bson:"min" json:"min"`
+	Min               int          `bson:"min,omitempty" json:"min,omitempty"`
 	Max               *string      `bson:"max,omitempty" json:"max,omitempty"`
 }
 type MessageDefinitionAllowedResponse struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Message           string      `bson:"message" json:"message"`
+	Message           string      `bson:"message,omitempty" json:"message,omitempty"`
 	Situation         *string     `bson:"situation,omitempty" json:"situation,omitempty"`
 }
 type OtherMessageDefinition MessageDefinition

@@ -29,11 +29,11 @@ type EpisodeOfCare struct {
 	Extension            []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier           []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status               EpisodeOfCareStatus          `bson:"status" json:"status"`
+	Status               EpisodeOfCareStatus          `bson:"status,omitempty" json:"status,omitempty"`
 	StatusHistory        []EpisodeOfCareStatusHistory `bson:"statusHistory,omitempty" json:"statusHistory,omitempty"`
 	Type                 []CodeableConcept            `bson:"type,omitempty" json:"type,omitempty"`
 	Diagnosis            []EpisodeOfCareDiagnosis     `bson:"diagnosis,omitempty" json:"diagnosis,omitempty"`
-	Patient              Reference                    `bson:"patient" json:"patient"`
+	Patient              Reference                    `bson:"patient,omitempty" json:"patient,omitempty"`
 	ManagingOrganization *Reference                   `bson:"managingOrganization,omitempty" json:"managingOrganization,omitempty"`
 	Period               *Period                      `bson:"period,omitempty" json:"period,omitempty"`
 	ReferralRequest      []Reference                  `bson:"referralRequest,omitempty" json:"referralRequest,omitempty"`
@@ -45,14 +45,14 @@ type EpisodeOfCareStatusHistory struct {
 	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Status            EpisodeOfCareStatus `bson:"status" json:"status"`
-	Period            Period              `bson:"period" json:"period"`
+	Status            EpisodeOfCareStatus `bson:"status,omitempty" json:"status,omitempty"`
+	Period            Period              `bson:"period,omitempty" json:"period,omitempty"`
 }
 type EpisodeOfCareDiagnosis struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Condition         Reference        `bson:"condition" json:"condition"`
+	Condition         Reference        `bson:"condition,omitempty" json:"condition,omitempty"`
 	Role              *CodeableConcept `bson:"role,omitempty" json:"role,omitempty"`
 	Rank              *int             `bson:"rank,omitempty" json:"rank,omitempty"`
 }

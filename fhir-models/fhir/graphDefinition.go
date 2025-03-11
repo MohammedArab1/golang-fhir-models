@@ -30,8 +30,8 @@ type GraphDefinition struct {
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Url               *string               `bson:"url,omitempty" json:"url,omitempty"`
 	Version           *string               `bson:"version,omitempty" json:"version,omitempty"`
-	Name              string                `bson:"name" json:"name"`
-	Status            PublicationStatus     `bson:"status" json:"status"`
+	Name              string                `bson:"name,omitempty" json:"name,omitempty"`
+	Status            PublicationStatus     `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool                 `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string               `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string               `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -40,7 +40,7 @@ type GraphDefinition struct {
 	UseContext        []UsageContext        `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	Jurisdiction      []CodeableConcept     `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose           *string               `bson:"purpose,omitempty" json:"purpose,omitempty"`
-	Start             ResourceType          `bson:"start" json:"start"`
+	Start             ResourceType          `bson:"start,omitempty" json:"start,omitempty"`
 	Profile           *string               `bson:"profile,omitempty" json:"profile,omitempty"`
 	Link              []GraphDefinitionLink `bson:"link,omitempty" json:"link,omitempty"`
 }
@@ -59,7 +59,7 @@ type GraphDefinitionLinkTarget struct {
 	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              ResourceType                           `bson:"type" json:"type"`
+	Type              ResourceType                           `bson:"type,omitempty" json:"type,omitempty"`
 	Params            *string                                `bson:"params,omitempty" json:"params,omitempty"`
 	Profile           *string                                `bson:"profile,omitempty" json:"profile,omitempty"`
 	Compartment       []GraphDefinitionLinkTargetCompartment `bson:"compartment,omitempty" json:"compartment,omitempty"`
@@ -69,9 +69,9 @@ type GraphDefinitionLinkTargetCompartment struct {
 	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Use               GraphCompartmentUse  `bson:"use" json:"use"`
-	Code              CompartmentType      `bson:"code" json:"code"`
-	Rule              GraphCompartmentRule `bson:"rule" json:"rule"`
+	Use               GraphCompartmentUse  `bson:"use,omitempty" json:"use,omitempty"`
+	Code              CompartmentType      `bson:"code,omitempty" json:"code,omitempty"`
+	Rule              GraphCompartmentRule `bson:"rule,omitempty" json:"rule,omitempty"`
 	Expression        *string              `bson:"expression,omitempty" json:"expression,omitempty"`
 	Description       *string              `bson:"description,omitempty" json:"description,omitempty"`
 }

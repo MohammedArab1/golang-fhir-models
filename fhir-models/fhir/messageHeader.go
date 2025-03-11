@@ -28,13 +28,13 @@ type MessageHeader struct {
 	Text              *Narrative                 `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	EventCoding       Coding                     `bson:"eventCoding" json:"eventCoding"`
-	EventUri          string                     `bson:"eventUri" json:"eventUri"`
+	EventCoding       Coding                     `bson:"eventCoding,omitempty" json:"eventCoding,omitempty"`
+	EventUri          string                     `bson:"eventUri,omitempty" json:"eventUri,omitempty"`
 	Destination       []MessageHeaderDestination `bson:"destination,omitempty" json:"destination,omitempty"`
 	Sender            *Reference                 `bson:"sender,omitempty" json:"sender,omitempty"`
 	Enterer           *Reference                 `bson:"enterer,omitempty" json:"enterer,omitempty"`
 	Author            *Reference                 `bson:"author,omitempty" json:"author,omitempty"`
-	Source            MessageHeaderSource        `bson:"source" json:"source"`
+	Source            MessageHeaderSource        `bson:"source,omitempty" json:"source,omitempty"`
 	Responsible       *Reference                 `bson:"responsible,omitempty" json:"responsible,omitempty"`
 	Reason            *CodeableConcept           `bson:"reason,omitempty" json:"reason,omitempty"`
 	Response          *MessageHeaderResponse     `bson:"response,omitempty" json:"response,omitempty"`
@@ -47,7 +47,7 @@ type MessageHeaderDestination struct {
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              *string     `bson:"name,omitempty" json:"name,omitempty"`
 	Target            *Reference  `bson:"target,omitempty" json:"target,omitempty"`
-	Endpoint          string      `bson:"endpoint" json:"endpoint"`
+	Endpoint          string      `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
 	Receiver          *Reference  `bson:"receiver,omitempty" json:"receiver,omitempty"`
 }
 type MessageHeaderSource struct {
@@ -58,14 +58,14 @@ type MessageHeaderSource struct {
 	Software          *string       `bson:"software,omitempty" json:"software,omitempty"`
 	Version           *string       `bson:"version,omitempty" json:"version,omitempty"`
 	Contact           *ContactPoint `bson:"contact,omitempty" json:"contact,omitempty"`
-	Endpoint          string        `bson:"endpoint" json:"endpoint"`
+	Endpoint          string        `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
 }
 type MessageHeaderResponse struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        string       `bson:"identifier" json:"identifier"`
-	Code              ResponseType `bson:"code" json:"code"`
+	Identifier        string       `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Code              ResponseType `bson:"code,omitempty" json:"code,omitempty"`
 	Details           *Reference   `bson:"details,omitempty" json:"details,omitempty"`
 }
 type OtherMessageHeader MessageHeader

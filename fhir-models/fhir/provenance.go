@@ -28,15 +28,15 @@ type Provenance struct {
 	Text              *Narrative         `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Target            []Reference        `bson:"target" json:"target"`
+	Target            []Reference        `bson:"target,omitempty" json:"target,omitempty"`
 	OccurredPeriod    *Period            `bson:"occurredPeriod,omitempty" json:"occurredPeriod,omitempty"`
 	OccurredDateTime  *string            `bson:"occurredDateTime,omitempty" json:"occurredDateTime,omitempty"`
-	Recorded          string             `bson:"recorded" json:"recorded"`
+	Recorded          string             `bson:"recorded,omitempty" json:"recorded,omitempty"`
 	Policy            []string           `bson:"policy,omitempty" json:"policy,omitempty"`
 	Location          *Reference         `bson:"location,omitempty" json:"location,omitempty"`
 	Reason            []CodeableConcept  `bson:"reason,omitempty" json:"reason,omitempty"`
 	Activity          *CodeableConcept   `bson:"activity,omitempty" json:"activity,omitempty"`
-	Agent             []ProvenanceAgent  `bson:"agent" json:"agent"`
+	Agent             []ProvenanceAgent  `bson:"agent,omitempty" json:"agent,omitempty"`
 	Entity            []ProvenanceEntity `bson:"entity,omitempty" json:"entity,omitempty"`
 	Signature         []Signature        `bson:"signature,omitempty" json:"signature,omitempty"`
 }
@@ -46,15 +46,15 @@ type ProvenanceAgent struct {
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	Role              []CodeableConcept `bson:"role,omitempty" json:"role,omitempty"`
-	Who               Reference         `bson:"who" json:"who"`
+	Who               Reference         `bson:"who,omitempty" json:"who,omitempty"`
 	OnBehalfOf        *Reference        `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
 }
 type ProvenanceEntity struct {
 	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Role              ProvenanceEntityRole `bson:"role" json:"role"`
-	What              Reference            `bson:"what" json:"what"`
+	Role              ProvenanceEntityRole `bson:"role,omitempty" json:"role,omitempty"`
+	What              Reference            `bson:"what,omitempty" json:"what,omitempty"`
 	Agent             []ProvenanceAgent    `bson:"agent,omitempty" json:"agent,omitempty"`
 }
 type OtherProvenance Provenance

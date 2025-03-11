@@ -28,22 +28,22 @@ type SearchParameter struct {
 	Text              *Narrative                 `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Url               string                     `bson:"url" json:"url"`
+	Url               string                     `bson:"url,omitempty" json:"url,omitempty"`
 	Version           *string                    `bson:"version,omitempty" json:"version,omitempty"`
-	Name              string                     `bson:"name" json:"name"`
+	Name              string                     `bson:"name,omitempty" json:"name,omitempty"`
 	DerivedFrom       *string                    `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
-	Status            PublicationStatus          `bson:"status" json:"status"`
+	Status            PublicationStatus          `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool                      `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string                    `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                    `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail            `bson:"contact,omitempty" json:"contact,omitempty"`
-	Description       string                     `bson:"description" json:"description"`
+	Description       string                     `bson:"description,omitempty" json:"description,omitempty"`
 	UseContext        []UsageContext             `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	Jurisdiction      []CodeableConcept          `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose           *string                    `bson:"purpose,omitempty" json:"purpose,omitempty"`
-	Code              string                     `bson:"code" json:"code"`
-	Base              []ResourceType             `bson:"base" json:"base"`
-	Type              SearchParamType            `bson:"type" json:"type"`
+	Code              string                     `bson:"code,omitempty" json:"code,omitempty"`
+	Base              []ResourceType             `bson:"base,omitempty" json:"base,omitempty"`
+	Type              SearchParamType            `bson:"type,omitempty" json:"type,omitempty"`
 	Expression        *string                    `bson:"expression,omitempty" json:"expression,omitempty"`
 	Xpath             *string                    `bson:"xpath,omitempty" json:"xpath,omitempty"`
 	XpathUsage        *XPathUsageType            `bson:"xpathUsage,omitempty" json:"xpathUsage,omitempty"`
@@ -59,8 +59,8 @@ type SearchParameterComponent struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Definition        string      `bson:"definition" json:"definition"`
-	Expression        string      `bson:"expression" json:"expression"`
+	Definition        string      `bson:"definition,omitempty" json:"definition,omitempty"`
+	Expression        string      `bson:"expression,omitempty" json:"expression,omitempty"`
 }
 type OtherSearchParameter SearchParameter
 

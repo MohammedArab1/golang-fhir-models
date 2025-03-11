@@ -29,7 +29,7 @@ type Appointment struct {
 	Extension             []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier            []Identifier             `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status                AppointmentStatus        `bson:"status" json:"status"`
+	Status                AppointmentStatus        `bson:"status,omitempty" json:"status,omitempty"`
 	CancelationReason     *CodeableConcept         `bson:"cancelationReason,omitempty" json:"cancelationReason,omitempty"`
 	ServiceCategory       []CodeableConcept        `bson:"serviceCategory,omitempty" json:"serviceCategory,omitempty"`
 	ServiceType           []CodeableConcept        `bson:"serviceType,omitempty" json:"serviceType,omitempty"`
@@ -48,7 +48,7 @@ type Appointment struct {
 	Comment               *string                  `bson:"comment,omitempty" json:"comment,omitempty"`
 	PatientInstruction    *string                  `bson:"patientInstruction,omitempty" json:"patientInstruction,omitempty"`
 	BasedOn               []Reference              `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
-	Participant           []AppointmentParticipant `bson:"participant" json:"participant"`
+	Participant           []AppointmentParticipant `bson:"participant,omitempty" json:"participant,omitempty"`
 	RequestedPeriod       []Period                 `bson:"requestedPeriod,omitempty" json:"requestedPeriod,omitempty"`
 }
 type AppointmentParticipant struct {
@@ -58,7 +58,7 @@ type AppointmentParticipant struct {
 	Type              []CodeableConcept    `bson:"type,omitempty" json:"type,omitempty"`
 	Actor             *Reference           `bson:"actor,omitempty" json:"actor,omitempty"`
 	Required          *ParticipantRequired `bson:"required,omitempty" json:"required,omitempty"`
-	Status            ParticipationStatus  `bson:"status" json:"status"`
+	Status            ParticipationStatus  `bson:"status,omitempty" json:"status,omitempty"`
 	Period            *Period              `bson:"period,omitempty" json:"period,omitempty"`
 }
 type OtherAppointment Appointment

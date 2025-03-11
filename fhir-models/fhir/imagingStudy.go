@@ -29,9 +29,9 @@ type ImagingStudy struct {
 	Extension          []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier         []Identifier         `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status             ImagingStudyStatus   `bson:"status" json:"status"`
+	Status             ImagingStudyStatus   `bson:"status,omitempty" json:"status,omitempty"`
 	Modality           []Coding             `bson:"modality,omitempty" json:"modality,omitempty"`
-	Subject            Reference            `bson:"subject" json:"subject"`
+	Subject            Reference            `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter          *Reference           `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Started            *string              `bson:"started,omitempty" json:"started,omitempty"`
 	BasedOn            []Reference          `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
@@ -53,9 +53,9 @@ type ImagingStudySeries struct {
 	Id                *string                       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Uid               string                        `bson:"uid" json:"uid"`
+	Uid               string                        `bson:"uid,omitempty" json:"uid,omitempty"`
 	Number            *int                          `bson:"number,omitempty" json:"number,omitempty"`
-	Modality          Coding                        `bson:"modality" json:"modality"`
+	Modality          Coding                        `bson:"modality,omitempty" json:"modality,omitempty"`
 	Description       *string                       `bson:"description,omitempty" json:"description,omitempty"`
 	NumberOfInstances *int                          `bson:"numberOfInstances,omitempty" json:"numberOfInstances,omitempty"`
 	Endpoint          []Reference                   `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
@@ -71,14 +71,14 @@ type ImagingStudySeriesPerformer struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
-	Actor             Reference        `bson:"actor" json:"actor"`
+	Actor             Reference        `bson:"actor,omitempty" json:"actor,omitempty"`
 }
 type ImagingStudySeriesInstance struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Uid               string      `bson:"uid" json:"uid"`
-	SopClass          Coding      `bson:"sopClass" json:"sopClass"`
+	Uid               string      `bson:"uid,omitempty" json:"uid,omitempty"`
+	SopClass          Coding      `bson:"sopClass,omitempty" json:"sopClass,omitempty"`
 	Number            *int        `bson:"number,omitempty" json:"number,omitempty"`
 	Title             *string     `bson:"title,omitempty" json:"title,omitempty"`
 }

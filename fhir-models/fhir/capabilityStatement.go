@@ -32,9 +32,9 @@ type CapabilityStatement struct {
 	Version             *string                            `bson:"version,omitempty" json:"version,omitempty"`
 	Name                *string                            `bson:"name,omitempty" json:"name,omitempty"`
 	Title               *string                            `bson:"title,omitempty" json:"title,omitempty"`
-	Status              PublicationStatus                  `bson:"status" json:"status"`
+	Status              PublicationStatus                  `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental        *bool                              `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date                string                             `bson:"date" json:"date"`
+	Date                string                             `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher           *string                            `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact             []ContactDetail                    `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description         *string                            `bson:"description,omitempty" json:"description,omitempty"`
@@ -42,13 +42,13 @@ type CapabilityStatement struct {
 	Jurisdiction        []CodeableConcept                  `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose             *string                            `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Copyright           *string                            `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	Kind                CapabilityStatementKind            `bson:"kind" json:"kind"`
+	Kind                CapabilityStatementKind            `bson:"kind,omitempty" json:"kind,omitempty"`
 	Instantiates        []string                           `bson:"instantiates,omitempty" json:"instantiates,omitempty"`
 	Imports             []string                           `bson:"imports,omitempty" json:"imports,omitempty"`
 	Software            *CapabilityStatementSoftware       `bson:"software,omitempty" json:"software,omitempty"`
 	Implementation      *CapabilityStatementImplementation `bson:"implementation,omitempty" json:"implementation,omitempty"`
-	FhirVersion         FHIRVersion                        `bson:"fhirVersion" json:"fhirVersion"`
-	Format              []string                           `bson:"format" json:"format"`
+	FhirVersion         FHIRVersion                        `bson:"fhirVersion,omitempty" json:"fhirVersion,omitempty"`
+	Format              []string                           `bson:"format,omitempty" json:"format,omitempty"`
 	PatchFormat         []string                           `bson:"patchFormat,omitempty" json:"patchFormat,omitempty"`
 	ImplementationGuide []string                           `bson:"implementationGuide,omitempty" json:"implementationGuide,omitempty"`
 	Rest                []CapabilityStatementRest          `bson:"rest,omitempty" json:"rest,omitempty"`
@@ -59,7 +59,7 @@ type CapabilityStatementSoftware struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string      `bson:"name" json:"name"`
+	Name              string      `bson:"name,omitempty" json:"name,omitempty"`
 	Version           *string     `bson:"version,omitempty" json:"version,omitempty"`
 	ReleaseDate       *string     `bson:"releaseDate,omitempty" json:"releaseDate,omitempty"`
 }
@@ -67,7 +67,7 @@ type CapabilityStatementImplementation struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Description       string      `bson:"description" json:"description"`
+	Description       string      `bson:"description,omitempty" json:"description,omitempty"`
 	Url               *string     `bson:"url,omitempty" json:"url,omitempty"`
 	Custodian         *Reference  `bson:"custodian,omitempty" json:"custodian,omitempty"`
 }
@@ -75,7 +75,7 @@ type CapabilityStatementRest struct {
 	Id                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Mode              RestfulCapabilityMode                        `bson:"mode" json:"mode"`
+	Mode              RestfulCapabilityMode                        `bson:"mode,omitempty" json:"mode,omitempty"`
 	Documentation     *string                                      `bson:"documentation,omitempty" json:"documentation,omitempty"`
 	Security          *CapabilityStatementRestSecurity             `bson:"security,omitempty" json:"security,omitempty"`
 	Resource          []CapabilityStatementRestResource            `bson:"resource,omitempty" json:"resource,omitempty"`
@@ -96,7 +96,7 @@ type CapabilityStatementRestResource struct {
 	Id                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              ResourceType                                 `bson:"type" json:"type"`
+	Type              ResourceType                                 `bson:"type,omitempty" json:"type,omitempty"`
 	Profile           *string                                      `bson:"profile,omitempty" json:"profile,omitempty"`
 	SupportedProfile  []string                                     `bson:"supportedProfile,omitempty" json:"supportedProfile,omitempty"`
 	Documentation     *string                                      `bson:"documentation,omitempty" json:"documentation,omitempty"`
@@ -118,31 +118,31 @@ type CapabilityStatementRestResourceInteraction struct {
 	Id                *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              TypeRestfulInteraction `bson:"code" json:"code"`
+	Code              TypeRestfulInteraction `bson:"code,omitempty" json:"code,omitempty"`
 	Documentation     *string                `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type CapabilityStatementRestResourceSearchParam struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string          `bson:"name" json:"name"`
+	Name              string          `bson:"name,omitempty" json:"name,omitempty"`
 	Definition        *string         `bson:"definition,omitempty" json:"definition,omitempty"`
-	Type              SearchParamType `bson:"type" json:"type"`
+	Type              SearchParamType `bson:"type,omitempty" json:"type,omitempty"`
 	Documentation     *string         `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type CapabilityStatementRestResourceOperation struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string      `bson:"name" json:"name"`
-	Definition        string      `bson:"definition" json:"definition"`
+	Name              string      `bson:"name,omitempty" json:"name,omitempty"`
+	Definition        string      `bson:"definition,omitempty" json:"definition,omitempty"`
 	Documentation     *string     `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type CapabilityStatementRestInteraction struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              SystemRestfulInteraction `bson:"code" json:"code"`
+	Code              SystemRestfulInteraction `bson:"code,omitempty" json:"code,omitempty"`
 	Documentation     *string                  `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type CapabilityStatementMessaging struct {
@@ -158,23 +158,23 @@ type CapabilityStatementMessagingEndpoint struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Protocol          Coding      `bson:"protocol" json:"protocol"`
-	Address           string      `bson:"address" json:"address"`
+	Protocol          Coding      `bson:"protocol,omitempty" json:"protocol,omitempty"`
+	Address           string      `bson:"address,omitempty" json:"address,omitempty"`
 }
 type CapabilityStatementMessagingSupportedMessage struct {
 	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Mode              EventCapabilityMode `bson:"mode" json:"mode"`
-	Definition        string              `bson:"definition" json:"definition"`
+	Mode              EventCapabilityMode `bson:"mode,omitempty" json:"mode,omitempty"`
+	Definition        string              `bson:"definition,omitempty" json:"definition,omitempty"`
 }
 type CapabilityStatementDocument struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Mode              DocumentMode `bson:"mode" json:"mode"`
+	Mode              DocumentMode `bson:"mode,omitempty" json:"mode,omitempty"`
 	Documentation     *string      `bson:"documentation,omitempty" json:"documentation,omitempty"`
-	Profile           string       `bson:"profile" json:"profile"`
+	Profile           string       `bson:"profile,omitempty" json:"profile,omitempty"`
 }
 type OtherCapabilityStatement CapabilityStatement
 

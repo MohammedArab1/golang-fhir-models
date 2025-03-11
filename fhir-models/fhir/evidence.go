@@ -35,7 +35,7 @@ type Evidence struct {
 	Title              *string           `bson:"title,omitempty" json:"title,omitempty"`
 	ShortTitle         *string           `bson:"shortTitle,omitempty" json:"shortTitle,omitempty"`
 	Subtitle           *string           `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status             PublicationStatus `bson:"status" json:"status"`
+	Status             PublicationStatus `bson:"status,omitempty" json:"status,omitempty"`
 	Date               *string           `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher          *string           `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact            []ContactDetail   `bson:"contact,omitempty" json:"contact,omitempty"`
@@ -53,7 +53,7 @@ type Evidence struct {
 	Reviewer           []ContactDetail   `bson:"reviewer,omitempty" json:"reviewer,omitempty"`
 	Endorser           []ContactDetail   `bson:"endorser,omitempty" json:"endorser,omitempty"`
 	RelatedArtifact    []RelatedArtifact `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
-	ExposureBackground Reference         `bson:"exposureBackground" json:"exposureBackground"`
+	ExposureBackground Reference         `bson:"exposureBackground,omitempty" json:"exposureBackground,omitempty"`
 	ExposureVariant    []Reference       `bson:"exposureVariant,omitempty" json:"exposureVariant,omitempty"`
 	Outcome            []Reference       `bson:"outcome,omitempty" json:"outcome,omitempty"`
 }

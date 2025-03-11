@@ -31,10 +31,10 @@ type RiskAssessment struct {
 	Identifier         []Identifier               `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	BasedOn            *Reference                 `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	Parent             *Reference                 `bson:"parent,omitempty" json:"parent,omitempty"`
-	Status             ObservationStatus          `bson:"status" json:"status"`
+	Status             ObservationStatus          `bson:"status,omitempty" json:"status,omitempty"`
 	Method             *CodeableConcept           `bson:"method,omitempty" json:"method,omitempty"`
 	Code               *CodeableConcept           `bson:"code,omitempty" json:"code,omitempty"`
-	Subject            Reference                  `bson:"subject" json:"subject"`
+	Subject            Reference                  `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter          *Reference                 `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	OccurrenceDateTime *string                    `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod   *Period                    `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`

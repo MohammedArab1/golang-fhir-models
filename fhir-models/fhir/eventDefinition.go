@@ -34,7 +34,7 @@ type EventDefinition struct {
 	Name                   *string             `bson:"name,omitempty" json:"name,omitempty"`
 	Title                  *string             `bson:"title,omitempty" json:"title,omitempty"`
 	Subtitle               *string             `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                 PublicationStatus   `bson:"status" json:"status"`
+	Status                 PublicationStatus   `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental           *bool               `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectCodeableConcept *CodeableConcept    `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference          `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
@@ -56,7 +56,7 @@ type EventDefinition struct {
 	Reviewer               []ContactDetail     `bson:"reviewer,omitempty" json:"reviewer,omitempty"`
 	Endorser               []ContactDetail     `bson:"endorser,omitempty" json:"endorser,omitempty"`
 	RelatedArtifact        []RelatedArtifact   `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
-	Trigger                []TriggerDefinition `bson:"trigger" json:"trigger"`
+	Trigger                []TriggerDefinition `bson:"trigger,omitempty" json:"trigger,omitempty"`
 }
 type OtherEventDefinition EventDefinition
 

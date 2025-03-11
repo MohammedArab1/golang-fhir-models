@@ -34,8 +34,8 @@ type ServiceRequest struct {
 	BasedOn                 []Reference       `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	Replaces                []Reference       `bson:"replaces,omitempty" json:"replaces,omitempty"`
 	Requisition             *Identifier       `bson:"requisition,omitempty" json:"requisition,omitempty"`
-	Status                  RequestStatus     `bson:"status" json:"status"`
-	Intent                  RequestIntent     `bson:"intent" json:"intent"`
+	Status                  RequestStatus     `bson:"status,omitempty" json:"status,omitempty"`
+	Intent                  RequestIntent     `bson:"intent,omitempty" json:"intent,omitempty"`
 	Category                []CodeableConcept `bson:"category,omitempty" json:"category,omitempty"`
 	Priority                *RequestPriority  `bson:"priority,omitempty" json:"priority,omitempty"`
 	DoNotPerform            *bool             `bson:"doNotPerform,omitempty" json:"doNotPerform,omitempty"`
@@ -44,7 +44,7 @@ type ServiceRequest struct {
 	QuantityQuantity        *Quantity         `bson:"quantityQuantity,omitempty" json:"quantityQuantity,omitempty"`
 	QuantityRatio           *Ratio            `bson:"quantityRatio,omitempty" json:"quantityRatio,omitempty"`
 	QuantityRange           *Range            `bson:"quantityRange,omitempty" json:"quantityRange,omitempty"`
-	Subject                 Reference         `bson:"subject" json:"subject"`
+	Subject                 Reference         `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter               *Reference        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	OccurrenceDateTime      *string           `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod        *Period           `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`

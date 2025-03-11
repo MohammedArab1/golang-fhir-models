@@ -31,7 +31,7 @@ type Media struct {
 	Identifier        []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	BasedOn           []Reference       `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	PartOf            []Reference       `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status            EventStatus       `bson:"status" json:"status"`
+	Status            EventStatus       `bson:"status,omitempty" json:"status,omitempty"`
 	Type              *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	Modality          *CodeableConcept  `bson:"modality,omitempty" json:"modality,omitempty"`
 	View              *CodeableConcept  `bson:"view,omitempty" json:"view,omitempty"`
@@ -49,7 +49,7 @@ type Media struct {
 	Width             *int              `bson:"width,omitempty" json:"width,omitempty"`
 	Frames            *int              `bson:"frames,omitempty" json:"frames,omitempty"`
 	Duration          *json.Number      `bson:"duration,omitempty" json:"duration,omitempty"`
-	Content           Attachment        `bson:"content" json:"content"`
+	Content           Attachment        `bson:"content,omitempty" json:"content,omitempty"`
 	Note              []Annotation      `bson:"note,omitempty" json:"note,omitempty"`
 }
 type OtherMedia Media

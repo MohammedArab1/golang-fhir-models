@@ -30,8 +30,8 @@ type CatalogEntry struct {
 	ModifierExtension        []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier               []Identifier               `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Type                     *CodeableConcept           `bson:"type,omitempty" json:"type,omitempty"`
-	Orderable                bool                       `bson:"orderable" json:"orderable"`
-	ReferencedItem           Reference                  `bson:"referencedItem" json:"referencedItem"`
+	Orderable                bool                       `bson:"orderable,omitempty" json:"orderable,omitempty"`
+	ReferencedItem           Reference                  `bson:"referencedItem,omitempty" json:"referencedItem,omitempty"`
 	AdditionalIdentifier     []Identifier               `bson:"additionalIdentifier,omitempty" json:"additionalIdentifier,omitempty"`
 	Classification           []CodeableConcept          `bson:"classification,omitempty" json:"classification,omitempty"`
 	Status                   *PublicationStatus         `bson:"status,omitempty" json:"status,omitempty"`
@@ -46,8 +46,8 @@ type CatalogEntryRelatedEntry struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Relationtype      CatalogEntryRelationType `bson:"relationtype" json:"relationtype"`
-	Item              Reference                `bson:"item" json:"item"`
+	Relationtype      CatalogEntryRelationType `bson:"relationtype,omitempty" json:"relationtype,omitempty"`
+	Item              Reference                `bson:"item,omitempty" json:"item,omitempty"`
 }
 type OtherCatalogEntry CatalogEntry
 

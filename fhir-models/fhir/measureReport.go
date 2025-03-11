@@ -29,13 +29,13 @@ type MeasureReport struct {
 	Extension           []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier          []Identifier         `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status              MeasureReportStatus  `bson:"status" json:"status"`
-	Type                MeasureReportType    `bson:"type" json:"type"`
-	Measure             string               `bson:"measure" json:"measure"`
+	Status              MeasureReportStatus  `bson:"status,omitempty" json:"status,omitempty"`
+	Type                MeasureReportType    `bson:"type,omitempty" json:"type,omitempty"`
+	Measure             string               `bson:"measure,omitempty" json:"measure,omitempty"`
 	Subject             *Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
 	Date                *string              `bson:"date,omitempty" json:"date,omitempty"`
 	Reporter            *Reference           `bson:"reporter,omitempty" json:"reporter,omitempty"`
-	Period              Period               `bson:"period" json:"period"`
+	Period              Period               `bson:"period,omitempty" json:"period,omitempty"`
 	ImprovementNotation *CodeableConcept     `bson:"improvementNotation,omitempty" json:"improvementNotation,omitempty"`
 	Group               []MeasureReportGroup `bson:"group,omitempty" json:"group,omitempty"`
 	EvaluatedResource   []Reference          `bson:"evaluatedResource,omitempty" json:"evaluatedResource,omitempty"`
@@ -77,8 +77,8 @@ type MeasureReportGroupStratifierStratumComponent struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept `bson:"code" json:"code"`
-	Value             CodeableConcept `bson:"value" json:"value"`
+	Code              CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	Value             CodeableConcept `bson:"value,omitempty" json:"value,omitempty"`
 }
 type MeasureReportGroupStratifierStratumPopulation struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`

@@ -34,7 +34,7 @@ type Communication struct {
 	BasedOn               []Reference            `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	PartOf                []Reference            `bson:"partOf,omitempty" json:"partOf,omitempty"`
 	InResponseTo          []Reference            `bson:"inResponseTo,omitempty" json:"inResponseTo,omitempty"`
-	Status                EventStatus            `bson:"status" json:"status"`
+	Status                EventStatus            `bson:"status,omitempty" json:"status,omitempty"`
 	StatusReason          *CodeableConcept       `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Category              []CodeableConcept      `bson:"category,omitempty" json:"category,omitempty"`
 	Priority              *RequestPriority       `bson:"priority,omitempty" json:"priority,omitempty"`
@@ -56,9 +56,9 @@ type CommunicationPayload struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ContentString     string      `bson:"contentString" json:"contentString"`
-	ContentAttachment Attachment  `bson:"contentAttachment" json:"contentAttachment"`
-	ContentReference  Reference   `bson:"contentReference" json:"contentReference"`
+	ContentString     string      `bson:"contentString,omitempty" json:"contentString,omitempty"`
+	ContentAttachment Attachment  `bson:"contentAttachment,omitempty" json:"contentAttachment,omitempty"`
+	ContentReference  Reference   `bson:"contentReference,omitempty" json:"contentReference,omitempty"`
 }
 type OtherCommunication Communication
 

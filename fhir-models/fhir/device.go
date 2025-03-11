@@ -70,14 +70,14 @@ type DeviceDeviceName struct {
 	Id                *string        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string         `bson:"name" json:"name"`
-	Type              DeviceNameType `bson:"type" json:"type"`
+	Name              string         `bson:"name,omitempty" json:"name,omitempty"`
+	Type              DeviceNameType `bson:"type,omitempty" json:"type,omitempty"`
 }
 type DeviceSpecialization struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	SystemType        CodeableConcept `bson:"systemType" json:"systemType"`
+	SystemType        CodeableConcept `bson:"systemType,omitempty" json:"systemType,omitempty"`
 	Version           *string         `bson:"version,omitempty" json:"version,omitempty"`
 }
 type DeviceVersion struct {
@@ -86,13 +86,13 @@ type DeviceVersion struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Component         *Identifier      `bson:"component,omitempty" json:"component,omitempty"`
-	Value             string           `bson:"value" json:"value"`
+	Value             string           `bson:"value,omitempty" json:"value,omitempty"`
 }
 type DeviceProperty struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept   `bson:"type" json:"type"`
+	Type              CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
 	ValueQuantity     []Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueCode         []CodeableConcept `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
 }

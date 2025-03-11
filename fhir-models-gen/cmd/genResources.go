@@ -471,11 +471,11 @@ func addFieldStatement(
 		}
 	}
 
-	if *element.Min == 0 {
+	// if *element.Min == 0 {
 		statement.Tag(map[string]string{"json": name + ",omitempty", "bson": name + ",omitempty"})
-	} else {
-		statement.Tag(map[string]string{"json": name, "bson": name})
-	}
+	// } else {
+	// 	statement.Tag(map[string]string{"json": name, "bson": name})
+	// }
 
 	return elementIndex, err
 }

@@ -35,7 +35,7 @@ type ResearchDefinition struct {
 	Title                  *string           `bson:"title,omitempty" json:"title,omitempty"`
 	ShortTitle             *string           `bson:"shortTitle,omitempty" json:"shortTitle,omitempty"`
 	Subtitle               *string           `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                 PublicationStatus `bson:"status" json:"status"`
+	Status                 PublicationStatus `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental           *bool             `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectCodeableConcept *CodeableConcept  `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference        `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
@@ -59,7 +59,7 @@ type ResearchDefinition struct {
 	Endorser               []ContactDetail   `bson:"endorser,omitempty" json:"endorser,omitempty"`
 	RelatedArtifact        []RelatedArtifact `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
 	Library                []string          `bson:"library,omitempty" json:"library,omitempty"`
-	Population             Reference         `bson:"population" json:"population"`
+	Population             Reference         `bson:"population,omitempty" json:"population,omitempty"`
 	Exposure               *Reference        `bson:"exposure,omitempty" json:"exposure,omitempty"`
 	ExposureAlternative    *Reference        `bson:"exposureAlternative,omitempty" json:"exposureAlternative,omitempty"`
 	Outcome                *Reference        `bson:"outcome,omitempty" json:"outcome,omitempty"`

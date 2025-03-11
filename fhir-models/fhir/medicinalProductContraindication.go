@@ -40,9 +40,9 @@ type MedicinalProductContraindicationOtherTherapy struct {
 	Id                        *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	TherapyRelationshipType   CodeableConcept `bson:"therapyRelationshipType" json:"therapyRelationshipType"`
-	MedicationCodeableConcept CodeableConcept `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
-	MedicationReference       Reference       `bson:"medicationReference" json:"medicationReference"`
+	TherapyRelationshipType   CodeableConcept `bson:"therapyRelationshipType,omitempty" json:"therapyRelationshipType,omitempty"`
+	MedicationCodeableConcept CodeableConcept `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
+	MedicationReference       Reference       `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
 }
 type OtherMedicinalProductContraindication MedicinalProductContraindication
 

@@ -32,9 +32,9 @@ type SupplyRequest struct {
 	Status              *SupplyRequestStatus     `bson:"status,omitempty" json:"status,omitempty"`
 	Category            *CodeableConcept         `bson:"category,omitempty" json:"category,omitempty"`
 	Priority            *RequestPriority         `bson:"priority,omitempty" json:"priority,omitempty"`
-	ItemCodeableConcept CodeableConcept          `bson:"itemCodeableConcept" json:"itemCodeableConcept"`
-	ItemReference       Reference                `bson:"itemReference" json:"itemReference"`
-	Quantity            Quantity                 `bson:"quantity" json:"quantity"`
+	ItemCodeableConcept CodeableConcept          `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
+	ItemReference       Reference                `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
+	Quantity            Quantity                 `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	Parameter           []SupplyRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
 	OccurrenceDateTime  *string                  `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod    *Period                  `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`

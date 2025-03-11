@@ -34,7 +34,7 @@ type ActivityDefinition struct {
 	Name                         *string                          `bson:"name,omitempty" json:"name,omitempty"`
 	Title                        *string                          `bson:"title,omitempty" json:"title,omitempty"`
 	Subtitle                     *string                          `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                       PublicationStatus                `bson:"status" json:"status"`
+	Status                       PublicationStatus                `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental                 *bool                            `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectCodeableConcept       *CodeableConcept                 `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference             *Reference                       `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
@@ -86,15 +86,15 @@ type ActivityDefinitionParticipant struct {
 	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              ActionParticipantType `bson:"type" json:"type"`
+	Type              ActionParticipantType `bson:"type,omitempty" json:"type,omitempty"`
 	Role              *CodeableConcept      `bson:"role,omitempty" json:"role,omitempty"`
 }
 type ActivityDefinitionDynamicValue struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Path              string      `bson:"path" json:"path"`
-	Expression        Expression  `bson:"expression" json:"expression"`
+	Path              string      `bson:"path,omitempty" json:"path,omitempty"`
+	Expression        Expression  `bson:"expression,omitempty" json:"expression,omitempty"`
 }
 type OtherActivityDefinition ActivityDefinition
 

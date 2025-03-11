@@ -55,8 +55,8 @@ type MedicationKnowledgeRelatedMedicationKnowledge struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
-	Reference         []Reference     `bson:"reference" json:"reference"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	Reference         []Reference     `bson:"reference,omitempty" json:"reference,omitempty"`
 }
 type MedicationKnowledgeMonograph struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
@@ -69,8 +69,8 @@ type MedicationKnowledgeIngredient struct {
 	Id                  *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept" json:"itemCodeableConcept"`
-	ItemReference       Reference       `bson:"itemReference" json:"itemReference"`
+	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
+	ItemReference       Reference       `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
 	IsActive            *bool           `bson:"isActive,omitempty" json:"isActive,omitempty"`
 	Strength            *Ratio          `bson:"strength,omitempty" json:"strength,omitempty"`
 }
@@ -78,9 +78,9 @@ type MedicationKnowledgeCost struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Source            *string         `bson:"source,omitempty" json:"source,omitempty"`
-	Cost              Money           `bson:"cost" json:"cost"`
+	Cost              Money           `bson:"cost,omitempty" json:"cost,omitempty"`
 }
 type MedicationKnowledgeMonitoringProgram struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
@@ -102,22 +102,22 @@ type MedicationKnowledgeAdministrationGuidelinesDosage struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
-	Dosage            []Dosage        `bson:"dosage" json:"dosage"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	Dosage            []Dosage        `bson:"dosage,omitempty" json:"dosage,omitempty"`
 }
 type MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics struct {
 	Id                            *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                     []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension             []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	CharacteristicCodeableConcept CodeableConcept `bson:"characteristicCodeableConcept" json:"characteristicCodeableConcept"`
-	CharacteristicQuantity        Quantity        `bson:"characteristicQuantity" json:"characteristicQuantity"`
+	CharacteristicCodeableConcept CodeableConcept `bson:"characteristicCodeableConcept,omitempty" json:"characteristicCodeableConcept,omitempty"`
+	CharacteristicQuantity        Quantity        `bson:"characteristicQuantity,omitempty" json:"characteristicQuantity,omitempty"`
 	Value                         []string        `bson:"value,omitempty" json:"value,omitempty"`
 }
 type MedicationKnowledgeMedicineClassification struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept   `bson:"type" json:"type"`
+	Type              CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
 	Classification    []CodeableConcept `bson:"classification,omitempty" json:"classification,omitempty"`
 }
 type MedicationKnowledgePackaging struct {
@@ -141,7 +141,7 @@ type MedicationKnowledgeRegulatory struct {
 	Id                  *string                                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension                                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension                                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	RegulatoryAuthority Reference                                   `bson:"regulatoryAuthority" json:"regulatoryAuthority"`
+	RegulatoryAuthority Reference                                   `bson:"regulatoryAuthority,omitempty" json:"regulatoryAuthority,omitempty"`
 	Substitution        []MedicationKnowledgeRegulatorySubstitution `bson:"substitution,omitempty" json:"substitution,omitempty"`
 	Schedule            []MedicationKnowledgeRegulatorySchedule     `bson:"schedule,omitempty" json:"schedule,omitempty"`
 	MaxDispense         *MedicationKnowledgeRegulatoryMaxDispense   `bson:"maxDispense,omitempty" json:"maxDispense,omitempty"`
@@ -150,20 +150,20 @@ type MedicationKnowledgeRegulatorySubstitution struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
-	Allowed           bool            `bson:"allowed" json:"allowed"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	Allowed           bool            `bson:"allowed,omitempty" json:"allowed,omitempty"`
 }
 type MedicationKnowledgeRegulatorySchedule struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Schedule          CodeableConcept `bson:"schedule" json:"schedule"`
+	Schedule          CodeableConcept `bson:"schedule,omitempty" json:"schedule,omitempty"`
 }
 type MedicationKnowledgeRegulatoryMaxDispense struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Quantity          Quantity    `bson:"quantity" json:"quantity"`
+	Quantity          Quantity    `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	Period            *Duration   `bson:"period,omitempty" json:"period,omitempty"`
 }
 type MedicationKnowledgeKinetics struct {

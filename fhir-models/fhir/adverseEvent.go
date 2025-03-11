@@ -29,10 +29,10 @@ type AdverseEvent struct {
 	Extension             []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier            *Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Actuality             AdverseEventActuality       `bson:"actuality" json:"actuality"`
+	Actuality             AdverseEventActuality       `bson:"actuality,omitempty" json:"actuality,omitempty"`
 	Category              []CodeableConcept           `bson:"category,omitempty" json:"category,omitempty"`
 	Event                 *CodeableConcept            `bson:"event,omitempty" json:"event,omitempty"`
-	Subject               Reference                   `bson:"subject" json:"subject"`
+	Subject               Reference                   `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter             *Reference                  `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Date                  *string                     `bson:"date,omitempty" json:"date,omitempty"`
 	Detected              *string                     `bson:"detected,omitempty" json:"detected,omitempty"`
@@ -53,7 +53,7 @@ type AdverseEventSuspectEntity struct {
 	Id                *string                              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Instance          Reference                            `bson:"instance" json:"instance"`
+	Instance          Reference                            `bson:"instance,omitempty" json:"instance,omitempty"`
 	Causality         []AdverseEventSuspectEntityCausality `bson:"causality,omitempty" json:"causality,omitempty"`
 }
 type AdverseEventSuspectEntityCausality struct {

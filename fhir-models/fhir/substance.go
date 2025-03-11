@@ -31,7 +31,7 @@ type Substance struct {
 	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Status            *FHIRSubstanceStatus  `bson:"status,omitempty" json:"status,omitempty"`
 	Category          []CodeableConcept     `bson:"category,omitempty" json:"category,omitempty"`
-	Code              CodeableConcept       `bson:"code" json:"code"`
+	Code              CodeableConcept       `bson:"code,omitempty" json:"code,omitempty"`
 	Description       *string               `bson:"description,omitempty" json:"description,omitempty"`
 	Instance          []SubstanceInstance   `bson:"instance,omitempty" json:"instance,omitempty"`
 	Ingredient        []SubstanceIngredient `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
@@ -49,8 +49,8 @@ type SubstanceIngredient struct {
 	Extension                []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Quantity                 *Ratio          `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	SubstanceCodeableConcept CodeableConcept `bson:"substanceCodeableConcept" json:"substanceCodeableConcept"`
-	SubstanceReference       Reference       `bson:"substanceReference" json:"substanceReference"`
+	SubstanceCodeableConcept CodeableConcept `bson:"substanceCodeableConcept,omitempty" json:"substanceCodeableConcept,omitempty"`
+	SubstanceReference       Reference       `bson:"substanceReference,omitempty" json:"substanceReference,omitempty"`
 }
 type OtherSubstance Substance
 

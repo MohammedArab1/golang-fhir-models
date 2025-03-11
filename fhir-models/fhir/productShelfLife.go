@@ -23,7 +23,7 @@ type ProductShelfLife struct {
 	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier                   *Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type                         CodeableConcept   `bson:"type" json:"type"`
-	Period                       Quantity          `bson:"period" json:"period"`
+	Type                         CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
+	Period                       Quantity          `bson:"period,omitempty" json:"period,omitempty"`
 	SpecialPrecautionsForStorage []CodeableConcept `bson:"specialPrecautionsForStorage,omitempty" json:"specialPrecautionsForStorage,omitempty"`
 }

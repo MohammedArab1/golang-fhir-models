@@ -56,36 +56,36 @@ type DeviceDefinitionUdiDeviceIdentifier struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	DeviceIdentifier  string      `bson:"deviceIdentifier" json:"deviceIdentifier"`
-	Issuer            string      `bson:"issuer" json:"issuer"`
-	Jurisdiction      string      `bson:"jurisdiction" json:"jurisdiction"`
+	DeviceIdentifier  string      `bson:"deviceIdentifier,omitempty" json:"deviceIdentifier,omitempty"`
+	Issuer            string      `bson:"issuer,omitempty" json:"issuer,omitempty"`
+	Jurisdiction      string      `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 }
 type DeviceDefinitionDeviceName struct {
 	Id                *string        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string         `bson:"name" json:"name"`
-	Type              DeviceNameType `bson:"type" json:"type"`
+	Name              string         `bson:"name,omitempty" json:"name,omitempty"`
+	Type              DeviceNameType `bson:"type,omitempty" json:"type,omitempty"`
 }
 type DeviceDefinitionSpecialization struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	SystemType        string      `bson:"systemType" json:"systemType"`
+	SystemType        string      `bson:"systemType,omitempty" json:"systemType,omitempty"`
 	Version           *string     `bson:"version,omitempty" json:"version,omitempty"`
 }
 type DeviceDefinitionCapability struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept   `bson:"type" json:"type"`
+	Type              CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
 	Description       []CodeableConcept `bson:"description,omitempty" json:"description,omitempty"`
 }
 type DeviceDefinitionProperty struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept   `bson:"type" json:"type"`
+	Type              CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
 	ValueQuantity     []Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueCode         []CodeableConcept `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
 }
@@ -93,7 +93,7 @@ type DeviceDefinitionMaterial struct {
 	Id                  *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Substance           CodeableConcept `bson:"substance" json:"substance"`
+	Substance           CodeableConcept `bson:"substance,omitempty" json:"substance,omitempty"`
 	Alternate           *bool           `bson:"alternate,omitempty" json:"alternate,omitempty"`
 	AllergenicIndicator *bool           `bson:"allergenicIndicator,omitempty" json:"allergenicIndicator,omitempty"`
 }

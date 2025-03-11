@@ -29,7 +29,7 @@ type Account struct {
 	Extension         []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            AccountStatus      `bson:"status" json:"status"`
+	Status            AccountStatus      `bson:"status,omitempty" json:"status,omitempty"`
 	Type              *CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
 	Name              *string            `bson:"name,omitempty" json:"name,omitempty"`
 	Subject           []Reference        `bson:"subject,omitempty" json:"subject,omitempty"`
@@ -44,14 +44,14 @@ type AccountCoverage struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Coverage          Reference   `bson:"coverage" json:"coverage"`
+	Coverage          Reference   `bson:"coverage,omitempty" json:"coverage,omitempty"`
 	Priority          *int        `bson:"priority,omitempty" json:"priority,omitempty"`
 }
 type AccountGuarantor struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Party             Reference   `bson:"party" json:"party"`
+	Party             Reference   `bson:"party,omitempty" json:"party,omitempty"`
 	OnHold            *bool       `bson:"onHold,omitempty" json:"onHold,omitempty"`
 	Period            *Period     `bson:"period,omitempty" json:"period,omitempty"`
 }

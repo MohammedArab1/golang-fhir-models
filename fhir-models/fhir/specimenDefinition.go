@@ -41,7 +41,7 @@ type SpecimenDefinitionTypeTested struct {
 	ModifierExtension  []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	IsDerived          *bool                                  `bson:"isDerived,omitempty" json:"isDerived,omitempty"`
 	Type               *CodeableConcept                       `bson:"type,omitempty" json:"type,omitempty"`
-	Preference         SpecimenContainedPreference            `bson:"preference" json:"preference"`
+	Preference         SpecimenContainedPreference            `bson:"preference,omitempty" json:"preference,omitempty"`
 	Container          *SpecimenDefinitionTypeTestedContainer `bson:"container,omitempty" json:"container,omitempty"`
 	Requirement        *string                                `bson:"requirement,omitempty" json:"requirement,omitempty"`
 	RetentionTime      *Duration                              `bson:"retentionTime,omitempty" json:"retentionTime,omitempty"`
@@ -66,8 +66,8 @@ type SpecimenDefinitionTypeTestedContainerAdditive struct {
 	Id                      *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension               []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	AdditiveCodeableConcept CodeableConcept `bson:"additiveCodeableConcept" json:"additiveCodeableConcept"`
-	AdditiveReference       Reference       `bson:"additiveReference" json:"additiveReference"`
+	AdditiveCodeableConcept CodeableConcept `bson:"additiveCodeableConcept,omitempty" json:"additiveCodeableConcept,omitempty"`
+	AdditiveReference       Reference       `bson:"additiveReference,omitempty" json:"additiveReference,omitempty"`
 }
 type SpecimenDefinitionTypeTestedHandling struct {
 	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`

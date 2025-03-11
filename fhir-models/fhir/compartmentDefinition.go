@@ -28,10 +28,10 @@ type CompartmentDefinition struct {
 	Text              *Narrative                      `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Url               string                          `bson:"url" json:"url"`
+	Url               string                          `bson:"url,omitempty" json:"url,omitempty"`
 	Version           *string                         `bson:"version,omitempty" json:"version,omitempty"`
-	Name              string                          `bson:"name" json:"name"`
-	Status            PublicationStatus               `bson:"status" json:"status"`
+	Name              string                          `bson:"name,omitempty" json:"name,omitempty"`
+	Status            PublicationStatus               `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool                           `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string                         `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                         `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -39,15 +39,15 @@ type CompartmentDefinition struct {
 	Description       *string                         `bson:"description,omitempty" json:"description,omitempty"`
 	UseContext        []UsageContext                  `bson:"useContext,omitempty" json:"useContext,omitempty"`
 	Purpose           *string                         `bson:"purpose,omitempty" json:"purpose,omitempty"`
-	Code              CompartmentType                 `bson:"code" json:"code"`
-	Search            bool                            `bson:"search" json:"search"`
+	Code              CompartmentType                 `bson:"code,omitempty" json:"code,omitempty"`
+	Search            bool                            `bson:"search,omitempty" json:"search,omitempty"`
 	Resource          []CompartmentDefinitionResource `bson:"resource,omitempty" json:"resource,omitempty"`
 }
 type CompartmentDefinitionResource struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              ResourceType `bson:"code" json:"code"`
+	Code              ResourceType `bson:"code,omitempty" json:"code,omitempty"`
 	Param             []string     `bson:"param,omitempty" json:"param,omitempty"`
 	Documentation     *string      `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }

@@ -21,6 +21,6 @@ package fhir
 type Narrative struct {
 	Id        *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	Status    NarrativeStatus `bson:"status" json:"status"`
-	Div       string          `bson:"div" json:"div"`
+	Status    NarrativeStatus `bson:"status,omitempty" json:"status,omitempty"`
+	Div       string          `bson:"div,omitempty" json:"div,omitempty"`
 }

@@ -33,7 +33,7 @@ type CodeSystem struct {
 	Version           *string                     `bson:"version,omitempty" json:"version,omitempty"`
 	Name              *string                     `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string                     `bson:"title,omitempty" json:"title,omitempty"`
-	Status            PublicationStatus           `bson:"status" json:"status"`
+	Status            PublicationStatus           `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool                       `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string                     `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                     `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -48,7 +48,7 @@ type CodeSystem struct {
 	HierarchyMeaning  *CodeSystemHierarchyMeaning `bson:"hierarchyMeaning,omitempty" json:"hierarchyMeaning,omitempty"`
 	Compositional     *bool                       `bson:"compositional,omitempty" json:"compositional,omitempty"`
 	VersionNeeded     *bool                       `bson:"versionNeeded,omitempty" json:"versionNeeded,omitempty"`
-	Content           CodeSystemContentMode       `bson:"content" json:"content"`
+	Content           CodeSystemContentMode       `bson:"content,omitempty" json:"content,omitempty"`
 	Supplements       *string                     `bson:"supplements,omitempty" json:"supplements,omitempty"`
 	Count             *int                        `bson:"count,omitempty" json:"count,omitempty"`
 	Filter            []CodeSystemFilter          `bson:"filter,omitempty" json:"filter,omitempty"`
@@ -59,25 +59,25 @@ type CodeSystemFilter struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              string           `bson:"code" json:"code"`
+	Code              string           `bson:"code,omitempty" json:"code,omitempty"`
 	Description       *string          `bson:"description,omitempty" json:"description,omitempty"`
-	Operator          []FilterOperator `bson:"operator" json:"operator"`
-	Value             string           `bson:"value" json:"value"`
+	Operator          []FilterOperator `bson:"operator,omitempty" json:"operator,omitempty"`
+	Value             string           `bson:"value,omitempty" json:"value,omitempty"`
 }
 type CodeSystemProperty struct {
 	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              string       `bson:"code" json:"code"`
+	Code              string       `bson:"code,omitempty" json:"code,omitempty"`
 	Uri               *string      `bson:"uri,omitempty" json:"uri,omitempty"`
 	Description       *string      `bson:"description,omitempty" json:"description,omitempty"`
-	Type              PropertyType `bson:"type" json:"type"`
+	Type              PropertyType `bson:"type,omitempty" json:"type,omitempty"`
 }
 type CodeSystemConcept struct {
 	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              string                         `bson:"code" json:"code"`
+	Code              string                         `bson:"code,omitempty" json:"code,omitempty"`
 	Display           *string                        `bson:"display,omitempty" json:"display,omitempty"`
 	Definition        *string                        `bson:"definition,omitempty" json:"definition,omitempty"`
 	Designation       []CodeSystemConceptDesignation `bson:"designation,omitempty" json:"designation,omitempty"`
@@ -90,20 +90,20 @@ type CodeSystemConceptDesignation struct {
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Language          *string     `bson:"language,omitempty" json:"language,omitempty"`
 	Use               *Coding     `bson:"use,omitempty" json:"use,omitempty"`
-	Value             string      `bson:"value" json:"value"`
+	Value             string      `bson:"value,omitempty" json:"value,omitempty"`
 }
 type CodeSystemConceptProperty struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              string      `bson:"code" json:"code"`
-	ValueCode         string      `bson:"valueCode" json:"valueCode"`
-	ValueCoding       Coding      `bson:"valueCoding" json:"valueCoding"`
-	ValueString       string      `bson:"valueString" json:"valueString"`
-	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
-	ValueBoolean      bool        `bson:"valueBoolean" json:"valueBoolean"`
-	ValueDateTime     string      `bson:"valueDateTime" json:"valueDateTime"`
-	ValueDecimal      json.Number `bson:"valueDecimal" json:"valueDecimal"`
+	Code              string      `bson:"code,omitempty" json:"code,omitempty"`
+	ValueCode         string      `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
+	ValueCoding       Coding      `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
+	ValueString       string      `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueInteger      int         `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueBoolean      bool        `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueDateTime     string      `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDecimal      json.Number `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
 }
 type OtherCodeSystem CodeSystem
 

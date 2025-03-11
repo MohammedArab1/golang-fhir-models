@@ -33,7 +33,7 @@ type RiskEvidenceSynthesis struct {
 	Version           *string                            `bson:"version,omitempty" json:"version,omitempty"`
 	Name              *string                            `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string                            `bson:"title,omitempty" json:"title,omitempty"`
-	Status            PublicationStatus                  `bson:"status" json:"status"`
+	Status            PublicationStatus                  `bson:"status,omitempty" json:"status,omitempty"`
 	Date              *string                            `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                            `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail                    `bson:"contact,omitempty" json:"contact,omitempty"`
@@ -53,9 +53,9 @@ type RiskEvidenceSynthesis struct {
 	RelatedArtifact   []RelatedArtifact                  `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
 	SynthesisType     *CodeableConcept                   `bson:"synthesisType,omitempty" json:"synthesisType,omitempty"`
 	StudyType         *CodeableConcept                   `bson:"studyType,omitempty" json:"studyType,omitempty"`
-	Population        Reference                          `bson:"population" json:"population"`
+	Population        Reference                          `bson:"population,omitempty" json:"population,omitempty"`
 	Exposure          *Reference                         `bson:"exposure,omitempty" json:"exposure,omitempty"`
-	Outcome           Reference                          `bson:"outcome" json:"outcome"`
+	Outcome           Reference                          `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	SampleSize        *RiskEvidenceSynthesisSampleSize   `bson:"sampleSize,omitempty" json:"sampleSize,omitempty"`
 	RiskEstimate      *RiskEvidenceSynthesisRiskEstimate `bson:"riskEstimate,omitempty" json:"riskEstimate,omitempty"`
 	Certainty         []RiskEvidenceSynthesisCertainty   `bson:"certainty,omitempty" json:"certainty,omitempty"`

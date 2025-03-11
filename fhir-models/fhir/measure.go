@@ -34,7 +34,7 @@ type Measure struct {
 	Name                            *string                   `bson:"name,omitempty" json:"name,omitempty"`
 	Title                           *string                   `bson:"title,omitempty" json:"title,omitempty"`
 	Subtitle                        *string                   `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                          PublicationStatus         `bson:"status" json:"status"`
+	Status                          PublicationStatus         `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental                    *bool                     `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectCodeableConcept          *CodeableConcept          `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference                *Reference                `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
@@ -86,7 +86,7 @@ type MeasureGroupPopulation struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 	Description       *string          `bson:"description,omitempty" json:"description,omitempty"`
-	Criteria          Expression       `bson:"criteria" json:"criteria"`
+	Criteria          Expression       `bson:"criteria,omitempty" json:"criteria,omitempty"`
 }
 type MeasureGroupStratifier struct {
 	Id                *string                           `bson:"id,omitempty" json:"id,omitempty"`
@@ -103,7 +103,7 @@ type MeasureGroupStratifierComponent struct {
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 	Description       *string          `bson:"description,omitempty" json:"description,omitempty"`
-	Criteria          Expression       `bson:"criteria" json:"criteria"`
+	Criteria          Expression       `bson:"criteria,omitempty" json:"criteria,omitempty"`
 }
 type MeasureSupplementalData struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
@@ -112,7 +112,7 @@ type MeasureSupplementalData struct {
 	Code              *CodeableConcept  `bson:"code,omitempty" json:"code,omitempty"`
 	Usage             []CodeableConcept `bson:"usage,omitempty" json:"usage,omitempty"`
 	Description       *string           `bson:"description,omitempty" json:"description,omitempty"`
-	Criteria          Expression        `bson:"criteria" json:"criteria"`
+	Criteria          Expression        `bson:"criteria,omitempty" json:"criteria,omitempty"`
 }
 type OtherMeasure Measure
 

@@ -21,7 +21,7 @@ package fhir
 type RelatedArtifact struct {
 	Id        *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
-	Type      RelatedArtifactType `bson:"type" json:"type"`
+	Type      RelatedArtifactType `bson:"type,omitempty" json:"type,omitempty"`
 	Label     *string             `bson:"label,omitempty" json:"label,omitempty"`
 	Display   *string             `bson:"display,omitempty" json:"display,omitempty"`
 	Citation  *string             `bson:"citation,omitempty" json:"citation,omitempty"`

@@ -31,7 +31,7 @@ type ParametersParameter struct {
 	Id                       *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name                     string                `bson:"name" json:"name"`
+	Name                     string                `bson:"name,omitempty" json:"name,omitempty"`
 	ValueBase64Binary        *string               `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
 	ValueBoolean             *bool                 `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueCanonical           *string               `bson:"valueCanonical,omitempty" json:"valueCanonical,omitempty"`

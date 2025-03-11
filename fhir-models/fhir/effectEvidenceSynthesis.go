@@ -33,7 +33,7 @@ type EffectEvidenceSynthesis struct {
 	Version             *string                                    `bson:"version,omitempty" json:"version,omitempty"`
 	Name                *string                                    `bson:"name,omitempty" json:"name,omitempty"`
 	Title               *string                                    `bson:"title,omitempty" json:"title,omitempty"`
-	Status              PublicationStatus                          `bson:"status" json:"status"`
+	Status              PublicationStatus                          `bson:"status,omitempty" json:"status,omitempty"`
 	Date                *string                                    `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher           *string                                    `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact             []ContactDetail                            `bson:"contact,omitempty" json:"contact,omitempty"`
@@ -53,10 +53,10 @@ type EffectEvidenceSynthesis struct {
 	RelatedArtifact     []RelatedArtifact                          `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
 	SynthesisType       *CodeableConcept                           `bson:"synthesisType,omitempty" json:"synthesisType,omitempty"`
 	StudyType           *CodeableConcept                           `bson:"studyType,omitempty" json:"studyType,omitempty"`
-	Population          Reference                                  `bson:"population" json:"population"`
-	Exposure            Reference                                  `bson:"exposure" json:"exposure"`
-	ExposureAlternative Reference                                  `bson:"exposureAlternative" json:"exposureAlternative"`
-	Outcome             Reference                                  `bson:"outcome" json:"outcome"`
+	Population          Reference                                  `bson:"population,omitempty" json:"population,omitempty"`
+	Exposure            Reference                                  `bson:"exposure,omitempty" json:"exposure,omitempty"`
+	ExposureAlternative Reference                                  `bson:"exposureAlternative,omitempty" json:"exposureAlternative,omitempty"`
+	Outcome             Reference                                  `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	SampleSize          *EffectEvidenceSynthesisSampleSize         `bson:"sampleSize,omitempty" json:"sampleSize,omitempty"`
 	ResultsByExposure   []EffectEvidenceSynthesisResultsByExposure `bson:"resultsByExposure,omitempty" json:"resultsByExposure,omitempty"`
 	EffectEstimate      []EffectEvidenceSynthesisEffectEstimate    `bson:"effectEstimate,omitempty" json:"effectEstimate,omitempty"`
@@ -77,7 +77,7 @@ type EffectEvidenceSynthesisResultsByExposure struct {
 	Description           *string          `bson:"description,omitempty" json:"description,omitempty"`
 	ExposureState         *ExposureState   `bson:"exposureState,omitempty" json:"exposureState,omitempty"`
 	VariantState          *CodeableConcept `bson:"variantState,omitempty" json:"variantState,omitempty"`
-	RiskEvidenceSynthesis Reference        `bson:"riskEvidenceSynthesis" json:"riskEvidenceSynthesis"`
+	RiskEvidenceSynthesis Reference        `bson:"riskEvidenceSynthesis,omitempty" json:"riskEvidenceSynthesis,omitempty"`
 }
 type EffectEvidenceSynthesisEffectEstimate struct {
 	Id                *string                                                  `bson:"id,omitempty" json:"id,omitempty"`

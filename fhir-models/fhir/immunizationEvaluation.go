@@ -29,13 +29,13 @@ type ImmunizationEvaluation struct {
 	Extension              []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier             []Identifier                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status                 ImmunizationEvaluationStatusCodes `bson:"status" json:"status"`
-	Patient                Reference                         `bson:"patient" json:"patient"`
+	Status                 ImmunizationEvaluationStatusCodes `bson:"status,omitempty" json:"status,omitempty"`
+	Patient                Reference                         `bson:"patient,omitempty" json:"patient,omitempty"`
 	Date                   *string                           `bson:"date,omitempty" json:"date,omitempty"`
 	Authority              *Reference                        `bson:"authority,omitempty" json:"authority,omitempty"`
-	TargetDisease          CodeableConcept                   `bson:"targetDisease" json:"targetDisease"`
-	ImmunizationEvent      Reference                         `bson:"immunizationEvent" json:"immunizationEvent"`
-	DoseStatus             CodeableConcept                   `bson:"doseStatus" json:"doseStatus"`
+	TargetDisease          CodeableConcept                   `bson:"targetDisease,omitempty" json:"targetDisease,omitempty"`
+	ImmunizationEvent      Reference                         `bson:"immunizationEvent,omitempty" json:"immunizationEvent,omitempty"`
+	DoseStatus             CodeableConcept                   `bson:"doseStatus,omitempty" json:"doseStatus,omitempty"`
 	DoseStatusReason       []CodeableConcept                 `bson:"doseStatusReason,omitempty" json:"doseStatusReason,omitempty"`
 	Description            *string                           `bson:"description,omitempty" json:"description,omitempty"`
 	Series                 *string                           `bson:"series,omitempty" json:"series,omitempty"`

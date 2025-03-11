@@ -35,7 +35,7 @@ type ResearchElementDefinition struct {
 	Title                  *string                                   `bson:"title,omitempty" json:"title,omitempty"`
 	ShortTitle             *string                                   `bson:"shortTitle,omitempty" json:"shortTitle,omitempty"`
 	Subtitle               *string                                   `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                 PublicationStatus                         `bson:"status" json:"status"`
+	Status                 PublicationStatus                         `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental           *bool                                     `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	SubjectCodeableConcept *CodeableConcept                          `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference                                `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
@@ -59,18 +59,18 @@ type ResearchElementDefinition struct {
 	Endorser               []ContactDetail                           `bson:"endorser,omitempty" json:"endorser,omitempty"`
 	RelatedArtifact        []RelatedArtifact                         `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
 	Library                []string                                  `bson:"library,omitempty" json:"library,omitempty"`
-	Type                   ResearchElementType                       `bson:"type" json:"type"`
+	Type                   ResearchElementType                       `bson:"type,omitempty" json:"type,omitempty"`
 	VariableType           *EvidenceVariableType                     `bson:"variableType,omitempty" json:"variableType,omitempty"`
-	Characteristic         []ResearchElementDefinitionCharacteristic `bson:"characteristic" json:"characteristic"`
+	Characteristic         []ResearchElementDefinitionCharacteristic `bson:"characteristic,omitempty" json:"characteristic,omitempty"`
 }
 type ResearchElementDefinitionCharacteristic struct {
 	Id                                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension                 []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	DefinitionCodeableConcept         CodeableConcept  `bson:"definitionCodeableConcept" json:"definitionCodeableConcept"`
-	DefinitionCanonical               string           `bson:"definitionCanonical" json:"definitionCanonical"`
-	DefinitionExpression              Expression       `bson:"definitionExpression" json:"definitionExpression"`
-	DefinitionDataRequirement         DataRequirement  `bson:"definitionDataRequirement" json:"definitionDataRequirement"`
+	DefinitionCodeableConcept         CodeableConcept  `bson:"definitionCodeableConcept,omitempty" json:"definitionCodeableConcept,omitempty"`
+	DefinitionCanonical               string           `bson:"definitionCanonical,omitempty" json:"definitionCanonical,omitempty"`
+	DefinitionExpression              Expression       `bson:"definitionExpression,omitempty" json:"definitionExpression,omitempty"`
+	DefinitionDataRequirement         DataRequirement  `bson:"definitionDataRequirement,omitempty" json:"definitionDataRequirement,omitempty"`
 	UsageContext                      []UsageContext   `bson:"usageContext,omitempty" json:"usageContext,omitempty"`
 	Exclude                           *bool            `bson:"exclude,omitempty" json:"exclude,omitempty"`
 	UnitOfMeasure                     *CodeableConcept `bson:"unitOfMeasure,omitempty" json:"unitOfMeasure,omitempty"`

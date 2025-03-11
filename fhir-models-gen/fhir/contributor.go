@@ -21,7 +21,7 @@ package fhir
 type Contributor struct {
 	Id        *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	Type      ContributorType `bson:"type" json:"type"`
-	Name      string          `bson:"name" json:"name"`
+	Type      ContributorType `bson:"type,omitempty" json:"type,omitempty"`
+	Name      string          `bson:"name,omitempty" json:"name,omitempty"`
 	Contact   []ContactDetail `bson:"contact,omitempty" json:"contact,omitempty"`
 }

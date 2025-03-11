@@ -21,7 +21,7 @@ package fhir
 type DataRequirement struct {
 	Id                     *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
-	Type                   string                      `bson:"type" json:"type"`
+	Type                   string                      `bson:"type,omitempty" json:"type,omitempty"`
 	Profile                []string                    `bson:"profile,omitempty" json:"profile,omitempty"`
 	SubjectCodeableConcept *CodeableConcept            `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference                  `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
@@ -51,6 +51,6 @@ type DataRequirementDateFilter struct {
 type DataRequirementSort struct {
 	Id        *string       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension   `bson:"extension,omitempty" json:"extension,omitempty"`
-	Path      string        `bson:"path" json:"path"`
-	Direction SortDirection `bson:"direction" json:"direction"`
+	Path      string        `bson:"path,omitempty" json:"path,omitempty"`
+	Direction SortDirection `bson:"direction,omitempty" json:"direction,omitempty"`
 }

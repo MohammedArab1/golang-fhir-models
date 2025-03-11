@@ -33,7 +33,7 @@ type Schedule struct {
 	ServiceCategory   []CodeableConcept `bson:"serviceCategory,omitempty" json:"serviceCategory,omitempty"`
 	ServiceType       []CodeableConcept `bson:"serviceType,omitempty" json:"serviceType,omitempty"`
 	Specialty         []CodeableConcept `bson:"specialty,omitempty" json:"specialty,omitempty"`
-	Actor             []Reference       `bson:"actor" json:"actor"`
+	Actor             []Reference       `bson:"actor,omitempty" json:"actor,omitempty"`
 	PlanningHorizon   *Period           `bson:"planningHorizon,omitempty" json:"planningHorizon,omitempty"`
 	Comment           *string           `bson:"comment,omitempty" json:"comment,omitempty"`
 }

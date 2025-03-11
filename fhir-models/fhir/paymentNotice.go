@@ -29,16 +29,16 @@ type PaymentNotice struct {
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            FinancialResourceStatusCodes `bson:"status" json:"status"`
+	Status            FinancialResourceStatusCodes `bson:"status,omitempty" json:"status,omitempty"`
 	Request           *Reference                   `bson:"request,omitempty" json:"request,omitempty"`
 	Response          *Reference                   `bson:"response,omitempty" json:"response,omitempty"`
-	Created           string                       `bson:"created" json:"created"`
+	Created           string                       `bson:"created,omitempty" json:"created,omitempty"`
 	Provider          *Reference                   `bson:"provider,omitempty" json:"provider,omitempty"`
-	Payment           Reference                    `bson:"payment" json:"payment"`
+	Payment           Reference                    `bson:"payment,omitempty" json:"payment,omitempty"`
 	PaymentDate       *string                      `bson:"paymentDate,omitempty" json:"paymentDate,omitempty"`
 	Payee             *Reference                   `bson:"payee,omitempty" json:"payee,omitempty"`
-	Recipient         Reference                    `bson:"recipient" json:"recipient"`
-	Amount            Money                        `bson:"amount" json:"amount"`
+	Recipient         Reference                    `bson:"recipient,omitempty" json:"recipient,omitempty"`
+	Amount            Money                        `bson:"amount,omitempty" json:"amount,omitempty"`
 	PaymentStatus     *CodeableConcept             `bson:"paymentStatus,omitempty" json:"paymentStatus,omitempty"`
 }
 type OtherPaymentNotice PaymentNotice

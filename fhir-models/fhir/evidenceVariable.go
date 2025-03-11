@@ -35,7 +35,7 @@ type EvidenceVariable struct {
 	Title             *string                          `bson:"title,omitempty" json:"title,omitempty"`
 	ShortTitle        *string                          `bson:"shortTitle,omitempty" json:"shortTitle,omitempty"`
 	Subtitle          *string                          `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status            PublicationStatus                `bson:"status" json:"status"`
+	Status            PublicationStatus                `bson:"status,omitempty" json:"status,omitempty"`
 	Date              *string                          `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                          `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail                  `bson:"contact,omitempty" json:"contact,omitempty"`
@@ -54,19 +54,19 @@ type EvidenceVariable struct {
 	Endorser          []ContactDetail                  `bson:"endorser,omitempty" json:"endorser,omitempty"`
 	RelatedArtifact   []RelatedArtifact                `bson:"relatedArtifact,omitempty" json:"relatedArtifact,omitempty"`
 	Type              *EvidenceVariableType            `bson:"type,omitempty" json:"type,omitempty"`
-	Characteristic    []EvidenceVariableCharacteristic `bson:"characteristic" json:"characteristic"`
+	Characteristic    []EvidenceVariableCharacteristic `bson:"characteristic,omitempty" json:"characteristic,omitempty"`
 }
 type EvidenceVariableCharacteristic struct {
 	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description                  *string           `bson:"description,omitempty" json:"description,omitempty"`
-	DefinitionReference          Reference         `bson:"definitionReference" json:"definitionReference"`
-	DefinitionCanonical          string            `bson:"definitionCanonical" json:"definitionCanonical"`
-	DefinitionCodeableConcept    CodeableConcept   `bson:"definitionCodeableConcept" json:"definitionCodeableConcept"`
-	DefinitionExpression         Expression        `bson:"definitionExpression" json:"definitionExpression"`
-	DefinitionDataRequirement    DataRequirement   `bson:"definitionDataRequirement" json:"definitionDataRequirement"`
-	DefinitionTriggerDefinition  TriggerDefinition `bson:"definitionTriggerDefinition" json:"definitionTriggerDefinition"`
+	DefinitionReference          Reference         `bson:"definitionReference,omitempty" json:"definitionReference,omitempty"`
+	DefinitionCanonical          string            `bson:"definitionCanonical,omitempty" json:"definitionCanonical,omitempty"`
+	DefinitionCodeableConcept    CodeableConcept   `bson:"definitionCodeableConcept,omitempty" json:"definitionCodeableConcept,omitempty"`
+	DefinitionExpression         Expression        `bson:"definitionExpression,omitempty" json:"definitionExpression,omitempty"`
+	DefinitionDataRequirement    DataRequirement   `bson:"definitionDataRequirement,omitempty" json:"definitionDataRequirement,omitempty"`
+	DefinitionTriggerDefinition  TriggerDefinition `bson:"definitionTriggerDefinition,omitempty" json:"definitionTriggerDefinition,omitempty"`
 	UsageContext                 []UsageContext    `bson:"usageContext,omitempty" json:"usageContext,omitempty"`
 	Exclude                      *bool             `bson:"exclude,omitempty" json:"exclude,omitempty"`
 	ParticipantEffectiveDateTime *string           `bson:"participantEffectiveDateTime,omitempty" json:"participantEffectiveDateTime,omitempty"`

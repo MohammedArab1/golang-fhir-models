@@ -31,10 +31,10 @@ type ChargeItem struct {
 	Identifier             []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	DefinitionUri          []string              `bson:"definitionUri,omitempty" json:"definitionUri,omitempty"`
 	DefinitionCanonical    []string              `bson:"definitionCanonical,omitempty" json:"definitionCanonical,omitempty"`
-	Status                 ChargeItemStatus      `bson:"status" json:"status"`
+	Status                 ChargeItemStatus      `bson:"status,omitempty" json:"status,omitempty"`
 	PartOf                 []Reference           `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Code                   CodeableConcept       `bson:"code" json:"code"`
-	Subject                Reference             `bson:"subject" json:"subject"`
+	Code                   CodeableConcept       `bson:"code,omitempty" json:"code,omitempty"`
+	Subject                Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
 	Context                *Reference            `bson:"context,omitempty" json:"context,omitempty"`
 	OccurrenceDateTime     *string               `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
 	OccurrencePeriod       *Period               `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
@@ -63,7 +63,7 @@ type ChargeItemPerformer struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
-	Actor             Reference        `bson:"actor" json:"actor"`
+	Actor             Reference        `bson:"actor,omitempty" json:"actor,omitempty"`
 }
 type OtherChargeItem ChargeItem
 

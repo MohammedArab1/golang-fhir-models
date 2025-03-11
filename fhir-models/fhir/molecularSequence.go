@@ -30,7 +30,7 @@ type MolecularSequence struct {
 	ModifierExtension []Extension                         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                        `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Type              *string                             `bson:"type,omitempty" json:"type,omitempty"`
-	CoordinateSystem  int                                 `bson:"coordinateSystem" json:"coordinateSystem"`
+	CoordinateSystem  int                                 `bson:"coordinateSystem,omitempty" json:"coordinateSystem,omitempty"`
 	Patient           *Reference                          `bson:"patient,omitempty" json:"patient,omitempty"`
 	Specimen          *Reference                          `bson:"specimen,omitempty" json:"specimen,omitempty"`
 	Device            *Reference                          `bson:"device,omitempty" json:"device,omitempty"`
@@ -74,7 +74,7 @@ type MolecularSequenceQuality struct {
 	Id                *string                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              string                       `bson:"type" json:"type"`
+	Type              string                       `bson:"type,omitempty" json:"type,omitempty"`
 	StandardSequence  *CodeableConcept             `bson:"standardSequence,omitempty" json:"standardSequence,omitempty"`
 	Start             *int                         `bson:"start,omitempty" json:"start,omitempty"`
 	End               *int                         `bson:"end,omitempty" json:"end,omitempty"`
@@ -106,7 +106,7 @@ type MolecularSequenceRepository struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              string      `bson:"type" json:"type"`
+	Type              string      `bson:"type,omitempty" json:"type,omitempty"`
 	Url               *string     `bson:"url,omitempty" json:"url,omitempty"`
 	Name              *string     `bson:"name,omitempty" json:"name,omitempty"`
 	DatasetId         *string     `bson:"datasetId,omitempty" json:"datasetId,omitempty"`

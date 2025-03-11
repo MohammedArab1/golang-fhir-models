@@ -29,12 +29,12 @@ type AppointmentResponse struct {
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier        `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Appointment       Reference           `bson:"appointment" json:"appointment"`
+	Appointment       Reference           `bson:"appointment,omitempty" json:"appointment,omitempty"`
 	Start             *string             `bson:"start,omitempty" json:"start,omitempty"`
 	End               *string             `bson:"end,omitempty" json:"end,omitempty"`
 	ParticipantType   []CodeableConcept   `bson:"participantType,omitempty" json:"participantType,omitempty"`
 	Actor             *Reference          `bson:"actor,omitempty" json:"actor,omitempty"`
-	ParticipantStatus ParticipationStatus `bson:"participantStatus" json:"participantStatus"`
+	ParticipantStatus ParticipationStatus `bson:"participantStatus,omitempty" json:"participantStatus,omitempty"`
 	Comment           *string             `bson:"comment,omitempty" json:"comment,omitempty"`
 }
 type OtherAppointmentResponse AppointmentResponse

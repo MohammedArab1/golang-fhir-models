@@ -30,7 +30,7 @@ type RelatedPerson struct {
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Active            *bool                        `bson:"active,omitempty" json:"active,omitempty"`
-	Patient           Reference                    `bson:"patient" json:"patient"`
+	Patient           Reference                    `bson:"patient,omitempty" json:"patient,omitempty"`
 	Relationship      []CodeableConcept            `bson:"relationship,omitempty" json:"relationship,omitempty"`
 	Name              []HumanName                  `bson:"name,omitempty" json:"name,omitempty"`
 	Telecom           []ContactPoint               `bson:"telecom,omitempty" json:"telecom,omitempty"`
@@ -45,7 +45,7 @@ type RelatedPersonCommunication struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Language          CodeableConcept `bson:"language" json:"language"`
+	Language          CodeableConcept `bson:"language,omitempty" json:"language,omitempty"`
 	Preferred         *bool           `bson:"preferred,omitempty" json:"preferred,omitempty"`
 }
 type OtherRelatedPerson RelatedPerson

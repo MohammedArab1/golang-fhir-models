@@ -60,7 +60,7 @@ type MedicinalProductAuthorizationProcedure struct {
 	Extension         []Extension                              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *Identifier                              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type              CodeableConcept                          `bson:"type" json:"type"`
+	Type              CodeableConcept                          `bson:"type,omitempty" json:"type,omitempty"`
 	DatePeriod        *Period                                  `bson:"datePeriod,omitempty" json:"datePeriod,omitempty"`
 	DateDateTime      *string                                  `bson:"dateDateTime,omitempty" json:"dateDateTime,omitempty"`
 	Application       []MedicinalProductAuthorizationProcedure `bson:"application,omitempty" json:"application,omitempty"`

@@ -29,16 +29,16 @@ type Coverage struct {
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            FinancialResourceStatusCodes `bson:"status" json:"status"`
+	Status            FinancialResourceStatusCodes `bson:"status,omitempty" json:"status,omitempty"`
 	Type              *CodeableConcept             `bson:"type,omitempty" json:"type,omitempty"`
 	PolicyHolder      *Reference                   `bson:"policyHolder,omitempty" json:"policyHolder,omitempty"`
 	Subscriber        *Reference                   `bson:"subscriber,omitempty" json:"subscriber,omitempty"`
 	SubscriberId      *string                      `bson:"subscriberId,omitempty" json:"subscriberId,omitempty"`
-	Beneficiary       Reference                    `bson:"beneficiary" json:"beneficiary"`
+	Beneficiary       Reference                    `bson:"beneficiary,omitempty" json:"beneficiary,omitempty"`
 	Dependent         *string                      `bson:"dependent,omitempty" json:"dependent,omitempty"`
 	Relationship      *CodeableConcept             `bson:"relationship,omitempty" json:"relationship,omitempty"`
 	Period            *Period                      `bson:"period,omitempty" json:"period,omitempty"`
-	Payor             []Reference                  `bson:"payor" json:"payor"`
+	Payor             []Reference                  `bson:"payor,omitempty" json:"payor,omitempty"`
 	Class             []CoverageClass              `bson:"class,omitempty" json:"class,omitempty"`
 	Order             *int                         `bson:"order,omitempty" json:"order,omitempty"`
 	Network           *string                      `bson:"network,omitempty" json:"network,omitempty"`
@@ -50,8 +50,8 @@ type CoverageClass struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
-	Value             string          `bson:"value" json:"value"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	Value             string          `bson:"value,omitempty" json:"value,omitempty"`
 	Name              *string         `bson:"name,omitempty" json:"name,omitempty"`
 }
 type CoverageCostToBeneficiary struct {
@@ -59,15 +59,15 @@ type CoverageCostToBeneficiary struct {
 	Extension         []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept                     `bson:"type,omitempty" json:"type,omitempty"`
-	ValueQuantity     Quantity                             `bson:"valueQuantity" json:"valueQuantity"`
-	ValueMoney        Money                                `bson:"valueMoney" json:"valueMoney"`
+	ValueQuantity     Quantity                             `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueMoney        Money                                `bson:"valueMoney,omitempty" json:"valueMoney,omitempty"`
 	Exception         []CoverageCostToBeneficiaryException `bson:"exception,omitempty" json:"exception,omitempty"`
 }
 type CoverageCostToBeneficiaryException struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept `bson:"type" json:"type"`
+	Type              CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Period            *Period         `bson:"period,omitempty" json:"period,omitempty"`
 }
 type OtherCoverage Coverage

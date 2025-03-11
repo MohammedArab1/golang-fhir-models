@@ -28,12 +28,12 @@ type StructureDefinition struct {
 	Text              *Narrative                       `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Url               string                           `bson:"url" json:"url"`
+	Url               string                           `bson:"url,omitempty" json:"url,omitempty"`
 	Identifier        []Identifier                     `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Version           *string                          `bson:"version,omitempty" json:"version,omitempty"`
-	Name              string                           `bson:"name" json:"name"`
+	Name              string                           `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string                          `bson:"title,omitempty" json:"title,omitempty"`
-	Status            PublicationStatus                `bson:"status" json:"status"`
+	Status            PublicationStatus                `bson:"status,omitempty" json:"status,omitempty"`
 	Experimental      *bool                            `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string                          `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                          `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -46,11 +46,11 @@ type StructureDefinition struct {
 	Keyword           []Coding                         `bson:"keyword,omitempty" json:"keyword,omitempty"`
 	FhirVersion       *FHIRVersion                     `bson:"fhirVersion,omitempty" json:"fhirVersion,omitempty"`
 	Mapping           []StructureDefinitionMapping     `bson:"mapping,omitempty" json:"mapping,omitempty"`
-	Kind              StructureDefinitionKind          `bson:"kind" json:"kind"`
-	Abstract          bool                             `bson:"abstract" json:"abstract"`
+	Kind              StructureDefinitionKind          `bson:"kind,omitempty" json:"kind,omitempty"`
+	Abstract          bool                             `bson:"abstract,omitempty" json:"abstract,omitempty"`
 	Context           []StructureDefinitionContext     `bson:"context,omitempty" json:"context,omitempty"`
 	ContextInvariant  []string                         `bson:"contextInvariant,omitempty" json:"contextInvariant,omitempty"`
-	Type              string                           `bson:"type" json:"type"`
+	Type              string                           `bson:"type,omitempty" json:"type,omitempty"`
 	BaseDefinition    *string                          `bson:"baseDefinition,omitempty" json:"baseDefinition,omitempty"`
 	Derivation        *TypeDerivationRule              `bson:"derivation,omitempty" json:"derivation,omitempty"`
 	Snapshot          *StructureDefinitionSnapshot     `bson:"snapshot,omitempty" json:"snapshot,omitempty"`
@@ -60,7 +60,7 @@ type StructureDefinitionMapping struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identity          string      `bson:"identity" json:"identity"`
+	Identity          string      `bson:"identity,omitempty" json:"identity,omitempty"`
 	Uri               *string     `bson:"uri,omitempty" json:"uri,omitempty"`
 	Name              *string     `bson:"name,omitempty" json:"name,omitempty"`
 	Comment           *string     `bson:"comment,omitempty" json:"comment,omitempty"`
@@ -69,20 +69,20 @@ type StructureDefinitionContext struct {
 	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              ExtensionContextType `bson:"type" json:"type"`
-	Expression        string               `bson:"expression" json:"expression"`
+	Type              ExtensionContextType `bson:"type,omitempty" json:"type,omitempty"`
+	Expression        string               `bson:"expression,omitempty" json:"expression,omitempty"`
 }
 type StructureDefinitionSnapshot struct {
 	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Element           []ElementDefinition `bson:"element" json:"element"`
+	Element           []ElementDefinition `bson:"element,omitempty" json:"element,omitempty"`
 }
 type StructureDefinitionDifferential struct {
 	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Element           []ElementDefinition `bson:"element" json:"element"`
+	Element           []ElementDefinition `bson:"element,omitempty" json:"element,omitempty"`
 }
 type OtherStructureDefinition StructureDefinition
 

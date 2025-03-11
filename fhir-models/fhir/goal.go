@@ -29,12 +29,12 @@ type Goal struct {
 	Extension            []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier           []Identifier        `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	LifecycleStatus      GoalLifecycleStatus `bson:"lifecycleStatus" json:"lifecycleStatus"`
+	LifecycleStatus      GoalLifecycleStatus `bson:"lifecycleStatus,omitempty" json:"lifecycleStatus,omitempty"`
 	AchievementStatus    *CodeableConcept    `bson:"achievementStatus,omitempty" json:"achievementStatus,omitempty"`
 	Category             []CodeableConcept   `bson:"category,omitempty" json:"category,omitempty"`
 	Priority             *CodeableConcept    `bson:"priority,omitempty" json:"priority,omitempty"`
-	Description          CodeableConcept     `bson:"description" json:"description"`
-	Subject              Reference           `bson:"subject" json:"subject"`
+	Description          CodeableConcept     `bson:"description,omitempty" json:"description,omitempty"`
+	Subject              Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
 	StartDate            *string             `bson:"startDate,omitempty" json:"startDate,omitempty"`
 	StartCodeableConcept *CodeableConcept    `bson:"startCodeableConcept,omitempty" json:"startCodeableConcept,omitempty"`
 	Target               []GoalTarget        `bson:"target,omitempty" json:"target,omitempty"`
