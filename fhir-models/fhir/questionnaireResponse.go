@@ -32,7 +32,7 @@ type QuestionnaireResponse struct {
 	BasedOn           []Reference                 `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	PartOf            []Reference                 `bson:"partOf,omitempty" json:"partOf,omitempty"`
 	Questionnaire     *string                     `bson:"questionnaire,omitempty" json:"questionnaire,omitempty"`
-	Status            QuestionnaireResponseStatus `bson:"status,omitempty" json:"status,omitempty"`
+	Status            QuestionnaireResponseStatus `bson:"status" json:"status"`
 	Subject           *Reference                  `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference                  `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Authored          *string                     `bson:"authored,omitempty" json:"authored,omitempty"`
@@ -44,7 +44,7 @@ type QuestionnaireResponseItem struct {
 	Id                *string                           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	LinkId            string                            `bson:"linkId,omitempty" json:"linkId,omitempty"`
+	LinkId            string                            `bson:"linkId" json:"linkId"`
 	Definition        *string                           `bson:"definition,omitempty" json:"definition,omitempty"`
 	Text              *string                           `bson:"text,omitempty" json:"text,omitempty"`
 	Answer            []QuestionnaireResponseItemAnswer `bson:"answer,omitempty" json:"answer,omitempty"`

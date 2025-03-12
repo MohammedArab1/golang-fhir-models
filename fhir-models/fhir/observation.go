@@ -31,9 +31,9 @@ type Observation struct {
 	Identifier           []Identifier                `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	BasedOn              []Reference                 `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	PartOf               []Reference                 `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status               ObservationStatus           `bson:"status,omitempty" json:"status,omitempty"`
+	Status               ObservationStatus           `bson:"status" json:"status"`
 	Category             []CodeableConcept           `bson:"category,omitempty" json:"category,omitempty"`
-	Code                 CodeableConcept             `bson:"code,omitempty" json:"code,omitempty"`
+	Code                 CodeableConcept             `bson:"code" json:"code"`
 	Subject              *Reference                  `bson:"subject,omitempty" json:"subject,omitempty"`
 	Focus                []Reference                 `bson:"focus,omitempty" json:"focus,omitempty"`
 	Encounter            *Reference                  `bson:"encounter,omitempty" json:"encounter,omitempty"`
@@ -81,7 +81,7 @@ type ObservationComponent struct {
 	Id                   *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                 CodeableConcept             `bson:"code,omitempty" json:"code,omitempty"`
+	Code                 CodeableConcept             `bson:"code" json:"code"`
 	ValueQuantity        *Quantity                   `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
 	ValueCodeableConcept *CodeableConcept            `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
 	ValueString          *string                     `bson:"valueString,omitempty" json:"valueString,omitempty"`

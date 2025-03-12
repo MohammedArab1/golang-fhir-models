@@ -29,7 +29,7 @@ type ObservationDefinition struct {
 	Extension              []Extension                               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension                               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Category               []CodeableConcept                         `bson:"category,omitempty" json:"category,omitempty"`
-	Code                   CodeableConcept                           `bson:"code,omitempty" json:"code,omitempty"`
+	Code                   CodeableConcept                           `bson:"code" json:"code"`
 	Identifier             []Identifier                              `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	PermittedDataType      []ObservationDataType                     `bson:"permittedDataType,omitempty" json:"permittedDataType,omitempty"`
 	MultipleResultsAllowed *bool                                     `bson:"multipleResultsAllowed,omitempty" json:"multipleResultsAllowed,omitempty"`

@@ -29,7 +29,7 @@ type DetectedIssue struct {
 	Extension          []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier         []Identifier              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status             ObservationStatus         `bson:"status,omitempty" json:"status,omitempty"`
+	Status             ObservationStatus         `bson:"status" json:"status"`
 	Code               *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
 	Severity           *DetectedIssueSeverity    `bson:"severity,omitempty" json:"severity,omitempty"`
 	Patient            *Reference                `bson:"patient,omitempty" json:"patient,omitempty"`
@@ -53,7 +53,7 @@ type DetectedIssueMitigation struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Action            CodeableConcept `bson:"action,omitempty" json:"action,omitempty"`
+	Action            CodeableConcept `bson:"action" json:"action"`
 	Date              *string         `bson:"date,omitempty" json:"date,omitempty"`
 	Author            *Reference      `bson:"author,omitempty" json:"author,omitempty"`
 }

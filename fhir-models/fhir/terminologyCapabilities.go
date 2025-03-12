@@ -32,9 +32,9 @@ type TerminologyCapabilities struct {
 	Version           *string                                `bson:"version,omitempty" json:"version,omitempty"`
 	Name              *string                                `bson:"name,omitempty" json:"name,omitempty"`
 	Title             *string                                `bson:"title,omitempty" json:"title,omitempty"`
-	Status            PublicationStatus                      `bson:"status,omitempty" json:"status,omitempty"`
+	Status            PublicationStatus                      `bson:"status" json:"status"`
 	Experimental      *bool                                  `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Date              string                                 `bson:"date,omitempty" json:"date,omitempty"`
+	Date              string                                 `bson:"date" json:"date"`
 	Publisher         *string                                `bson:"publisher,omitempty" json:"publisher,omitempty"`
 	Contact           []ContactDetail                        `bson:"contact,omitempty" json:"contact,omitempty"`
 	Description       *string                                `bson:"description,omitempty" json:"description,omitempty"`
@@ -42,7 +42,7 @@ type TerminologyCapabilities struct {
 	Jurisdiction      []CodeableConcept                      `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose           *string                                `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	Copyright         *string                                `bson:"copyright,omitempty" json:"copyright,omitempty"`
-	Kind              CapabilityStatementKind                `bson:"kind,omitempty" json:"kind,omitempty"`
+	Kind              CapabilityStatementKind                `bson:"kind" json:"kind"`
 	Software          *TerminologyCapabilitiesSoftware       `bson:"software,omitempty" json:"software,omitempty"`
 	Implementation    *TerminologyCapabilitiesImplementation `bson:"implementation,omitempty" json:"implementation,omitempty"`
 	LockedDate        *bool                                  `bson:"lockedDate,omitempty" json:"lockedDate,omitempty"`
@@ -57,14 +57,14 @@ type TerminologyCapabilitiesSoftware struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string      `bson:"name,omitempty" json:"name,omitempty"`
+	Name              string      `bson:"name" json:"name"`
 	Version           *string     `bson:"version,omitempty" json:"version,omitempty"`
 }
 type TerminologyCapabilitiesImplementation struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Description       string      `bson:"description,omitempty" json:"description,omitempty"`
+	Description       string      `bson:"description" json:"description"`
 	Url               *string     `bson:"url,omitempty" json:"url,omitempty"`
 }
 type TerminologyCapabilitiesCodeSystem struct {
@@ -90,8 +90,8 @@ type TerminologyCapabilitiesCodeSystemVersionFilter struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              string      `bson:"code,omitempty" json:"code,omitempty"`
-	Op                []string    `bson:"op,omitempty" json:"op,omitempty"`
+	Code              string      `bson:"code" json:"code"`
+	Op                []string    `bson:"op" json:"op"`
 }
 type TerminologyCapabilitiesExpansion struct {
 	Id                *string                                     `bson:"id,omitempty" json:"id,omitempty"`
@@ -107,20 +107,20 @@ type TerminologyCapabilitiesExpansionParameter struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string      `bson:"name,omitempty" json:"name,omitempty"`
+	Name              string      `bson:"name" json:"name"`
 	Documentation     *string     `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type TerminologyCapabilitiesValidateCode struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Translations      bool        `bson:"translations,omitempty" json:"translations,omitempty"`
+	Translations      bool        `bson:"translations" json:"translations"`
 }
 type TerminologyCapabilitiesTranslation struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	NeedsMap          bool        `bson:"needsMap,omitempty" json:"needsMap,omitempty"`
+	NeedsMap          bool        `bson:"needsMap" json:"needsMap"`
 }
 type TerminologyCapabilitiesClosure struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`

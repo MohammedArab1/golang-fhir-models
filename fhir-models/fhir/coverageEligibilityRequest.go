@@ -29,16 +29,16 @@ type CoverageEligibilityRequest struct {
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            FinancialResourceStatusCodes               `bson:"status,omitempty" json:"status,omitempty"`
+	Status            FinancialResourceStatusCodes               `bson:"status" json:"status"`
 	Priority          *CodeableConcept                           `bson:"priority,omitempty" json:"priority,omitempty"`
-	Purpose           []EligibilityRequestPurpose                `bson:"purpose,omitempty" json:"purpose,omitempty"`
-	Patient           Reference                                  `bson:"patient,omitempty" json:"patient,omitempty"`
+	Purpose           []EligibilityRequestPurpose                `bson:"purpose" json:"purpose"`
+	Patient           Reference                                  `bson:"patient" json:"patient"`
 	ServicedDate      *string                                    `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
 	ServicedPeriod    *Period                                    `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
-	Created           string                                     `bson:"created,omitempty" json:"created,omitempty"`
+	Created           string                                     `bson:"created" json:"created"`
 	Enterer           *Reference                                 `bson:"enterer,omitempty" json:"enterer,omitempty"`
 	Provider          *Reference                                 `bson:"provider,omitempty" json:"provider,omitempty"`
-	Insurer           Reference                                  `bson:"insurer,omitempty" json:"insurer,omitempty"`
+	Insurer           Reference                                  `bson:"insurer" json:"insurer"`
 	Facility          *Reference                                 `bson:"facility,omitempty" json:"facility,omitempty"`
 	SupportingInfo    []CoverageEligibilityRequestSupportingInfo `bson:"supportingInfo,omitempty" json:"supportingInfo,omitempty"`
 	Insurance         []CoverageEligibilityRequestInsurance      `bson:"insurance,omitempty" json:"insurance,omitempty"`
@@ -48,8 +48,8 @@ type CoverageEligibilityRequestSupportingInfo struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Sequence          int         `bson:"sequence,omitempty" json:"sequence,omitempty"`
-	Information       Reference   `bson:"information,omitempty" json:"information,omitempty"`
+	Sequence          int         `bson:"sequence" json:"sequence"`
+	Information       Reference   `bson:"information" json:"information"`
 	AppliesToAll      *bool       `bson:"appliesToAll,omitempty" json:"appliesToAll,omitempty"`
 }
 type CoverageEligibilityRequestInsurance struct {
@@ -57,7 +57,7 @@ type CoverageEligibilityRequestInsurance struct {
 	Extension           []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Focal               *bool       `bson:"focal,omitempty" json:"focal,omitempty"`
-	Coverage            Reference   `bson:"coverage,omitempty" json:"coverage,omitempty"`
+	Coverage            Reference   `bson:"coverage" json:"coverage"`
 	BusinessArrangement *string     `bson:"businessArrangement,omitempty" json:"businessArrangement,omitempty"`
 }
 type CoverageEligibilityRequestItem struct {

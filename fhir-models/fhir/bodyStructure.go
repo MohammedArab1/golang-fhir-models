@@ -35,7 +35,7 @@ type BodyStructure struct {
 	LocationQualifier []CodeableConcept `bson:"locationQualifier,omitempty" json:"locationQualifier,omitempty"`
 	Description       *string           `bson:"description,omitempty" json:"description,omitempty"`
 	Image             []Attachment      `bson:"image,omitempty" json:"image,omitempty"`
-	Patient           Reference         `bson:"patient,omitempty" json:"patient,omitempty"`
+	Patient           Reference         `bson:"patient" json:"patient"`
 }
 type OtherBodyStructure BodyStructure
 

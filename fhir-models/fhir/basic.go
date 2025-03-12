@@ -29,7 +29,7 @@ type Basic struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier    `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Code              CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	Code              CodeableConcept `bson:"code" json:"code"`
 	Subject           *Reference      `bson:"subject,omitempty" json:"subject,omitempty"`
 	Created           *string         `bson:"created,omitempty" json:"created,omitempty"`
 	Author            *Reference      `bson:"author,omitempty" json:"author,omitempty"`

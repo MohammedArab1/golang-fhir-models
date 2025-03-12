@@ -36,13 +36,13 @@ type MedicinalProductPackaged struct {
 	MarketingAuthorization *Reference                                `bson:"marketingAuthorization,omitempty" json:"marketingAuthorization,omitempty"`
 	Manufacturer           []Reference                               `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
 	BatchIdentifier        []MedicinalProductPackagedBatchIdentifier `bson:"batchIdentifier,omitempty" json:"batchIdentifier,omitempty"`
-	PackageItem            []MedicinalProductPackagedPackageItem     `bson:"packageItem,omitempty" json:"packageItem,omitempty"`
+	PackageItem            []MedicinalProductPackagedPackageItem     `bson:"packageItem" json:"packageItem"`
 }
 type MedicinalProductPackagedBatchIdentifier struct {
 	Id                 *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	OuterPackaging     Identifier  `bson:"outerPackaging,omitempty" json:"outerPackaging,omitempty"`
+	OuterPackaging     Identifier  `bson:"outerPackaging" json:"outerPackaging"`
 	ImmediatePackaging *Identifier `bson:"immediatePackaging,omitempty" json:"immediatePackaging,omitempty"`
 }
 type MedicinalProductPackagedPackageItem struct {
@@ -50,8 +50,8 @@ type MedicinalProductPackagedPackageItem struct {
 	Extension               []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier              []Identifier                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type                    CodeableConcept                       `bson:"type,omitempty" json:"type,omitempty"`
-	Quantity                Quantity                              `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	Type                    CodeableConcept                       `bson:"type" json:"type"`
+	Quantity                Quantity                              `bson:"quantity" json:"quantity"`
 	Material                []CodeableConcept                     `bson:"material,omitempty" json:"material,omitempty"`
 	AlternateMaterial       []CodeableConcept                     `bson:"alternateMaterial,omitempty" json:"alternateMaterial,omitempty"`
 	Device                  []Reference                           `bson:"device,omitempty" json:"device,omitempty"`

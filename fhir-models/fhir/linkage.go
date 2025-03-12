@@ -30,14 +30,14 @@ type Linkage struct {
 	ModifierExtension []Extension   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Active            *bool         `bson:"active,omitempty" json:"active,omitempty"`
 	Author            *Reference    `bson:"author,omitempty" json:"author,omitempty"`
-	Item              []LinkageItem `bson:"item,omitempty" json:"item,omitempty"`
+	Item              []LinkageItem `bson:"item" json:"item"`
 }
 type LinkageItem struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              LinkageType `bson:"type,omitempty" json:"type,omitempty"`
-	Resource          Reference   `bson:"resource,omitempty" json:"resource,omitempty"`
+	Type              LinkageType `bson:"type" json:"type"`
+	Resource          Reference   `bson:"resource" json:"resource"`
 }
 type OtherLinkage Linkage
 

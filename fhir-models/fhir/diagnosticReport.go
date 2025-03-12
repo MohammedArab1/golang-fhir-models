@@ -30,9 +30,9 @@ type DiagnosticReport struct {
 	ModifierExtension  []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier         []Identifier            `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	BasedOn            []Reference             `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
-	Status             DiagnosticReportStatus  `bson:"status,omitempty" json:"status,omitempty"`
+	Status             DiagnosticReportStatus  `bson:"status" json:"status"`
 	Category           []CodeableConcept       `bson:"category,omitempty" json:"category,omitempty"`
-	Code               CodeableConcept         `bson:"code,omitempty" json:"code,omitempty"`
+	Code               CodeableConcept         `bson:"code" json:"code"`
 	Subject            *Reference              `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter          *Reference              `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	EffectiveDateTime  *string                 `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
@@ -53,7 +53,7 @@ type DiagnosticReportMedia struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Comment           *string     `bson:"comment,omitempty" json:"comment,omitempty"`
-	Link              Reference   `bson:"link,omitempty" json:"link,omitempty"`
+	Link              Reference   `bson:"link" json:"link"`
 }
 type OtherDiagnosticReport DiagnosticReport
 

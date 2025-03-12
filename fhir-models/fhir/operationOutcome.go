@@ -28,14 +28,14 @@ type OperationOutcome struct {
 	Text              *Narrative              `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Issue             []OperationOutcomeIssue `bson:"issue,omitempty" json:"issue,omitempty"`
+	Issue             []OperationOutcomeIssue `bson:"issue" json:"issue"`
 }
 type OperationOutcomeIssue struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Severity          IssueSeverity    `bson:"severity,omitempty" json:"severity,omitempty"`
-	Code              IssueType        `bson:"code,omitempty" json:"code,omitempty"`
+	Severity          IssueSeverity    `bson:"severity" json:"severity"`
+	Code              IssueType        `bson:"code" json:"code"`
 	Details           *CodeableConcept `bson:"details,omitempty" json:"details,omitempty"`
 	Diagnostics       *string          `bson:"diagnostics,omitempty" json:"diagnostics,omitempty"`
 	Location          []string         `bson:"location,omitempty" json:"location,omitempty"`

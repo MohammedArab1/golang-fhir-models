@@ -23,11 +23,11 @@ import "encoding/json"
 type SampledData struct {
 	Id         *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension  []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
-	Origin     Quantity     `bson:"origin,omitempty" json:"origin,omitempty"`
-	Period     json.Number  `bson:"period,omitempty" json:"period,omitempty"`
+	Origin     Quantity     `bson:"origin" json:"origin"`
+	Period     json.Number  `bson:"period" json:"period"`
 	Factor     *json.Number `bson:"factor,omitempty" json:"factor,omitempty"`
 	LowerLimit *json.Number `bson:"lowerLimit,omitempty" json:"lowerLimit,omitempty"`
 	UpperLimit *json.Number `bson:"upperLimit,omitempty" json:"upperLimit,omitempty"`
-	Dimensions int          `bson:"dimensions,omitempty" json:"dimensions,omitempty"`
+	Dimensions int          `bson:"dimensions" json:"dimensions"`
 	Data       *string      `bson:"data,omitempty" json:"data,omitempty"`
 }

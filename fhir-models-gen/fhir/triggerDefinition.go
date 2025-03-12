@@ -21,7 +21,7 @@ package fhir
 type TriggerDefinition struct {
 	Id              *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension       []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
-	Type            TriggerType       `bson:"type,omitempty" json:"type,omitempty"`
+	Type            TriggerType       `bson:"type" json:"type"`
 	Name            *string           `bson:"name,omitempty" json:"name,omitempty"`
 	TimingTiming    *Timing           `bson:"timingTiming,omitempty" json:"timingTiming,omitempty"`
 	TimingReference *Reference        `bson:"timingReference,omitempty" json:"timingReference,omitempty"`

@@ -44,7 +44,7 @@ type PractitionerQualification struct {
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier    `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Code              CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	Code              CodeableConcept `bson:"code" json:"code"`
 	Period            *Period         `bson:"period,omitempty" json:"period,omitempty"`
 	Issuer            *Reference      `bson:"issuer,omitempty" json:"issuer,omitempty"`
 }

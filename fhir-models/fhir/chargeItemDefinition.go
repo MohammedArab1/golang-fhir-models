@@ -28,14 +28,14 @@ type ChargeItemDefinition struct {
 	Text              *Narrative                          `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Url               string                              `bson:"url,omitempty" json:"url,omitempty"`
+	Url               string                              `bson:"url" json:"url"`
 	Identifier        []Identifier                        `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Version           *string                             `bson:"version,omitempty" json:"version,omitempty"`
 	Title             *string                             `bson:"title,omitempty" json:"title,omitempty"`
 	DerivedFromUri    []string                            `bson:"derivedFromUri,omitempty" json:"derivedFromUri,omitempty"`
 	PartOf            []string                            `bson:"partOf,omitempty" json:"partOf,omitempty"`
 	Replaces          []string                            `bson:"replaces,omitempty" json:"replaces,omitempty"`
-	Status            PublicationStatus                   `bson:"status,omitempty" json:"status,omitempty"`
+	Status            PublicationStatus                   `bson:"status" json:"status"`
 	Experimental      *bool                               `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string                             `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                             `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -71,7 +71,7 @@ type ChargeItemDefinitionPropertyGroupPriceComponent struct {
 	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              InvoicePriceComponentType `bson:"type,omitempty" json:"type,omitempty"`
+	Type              InvoicePriceComponentType `bson:"type" json:"type"`
 	Code              *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
 	Factor            *json.Number              `bson:"factor,omitempty" json:"factor,omitempty"`
 	Amount            *Money                    `bson:"amount,omitempty" json:"amount,omitempty"`

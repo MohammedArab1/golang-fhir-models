@@ -30,7 +30,7 @@ type DocumentReference struct {
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	MasterIdentifier  *Identifier                  `bson:"masterIdentifier,omitempty" json:"masterIdentifier,omitempty"`
 	Identifier        []Identifier                 `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            DocumentReferenceStatus      `bson:"status,omitempty" json:"status,omitempty"`
+	Status            DocumentReferenceStatus      `bson:"status" json:"status"`
 	DocStatus         *CompositionStatus           `bson:"docStatus,omitempty" json:"docStatus,omitempty"`
 	Type              *CodeableConcept             `bson:"type,omitempty" json:"type,omitempty"`
 	Category          []CodeableConcept            `bson:"category,omitempty" json:"category,omitempty"`
@@ -42,21 +42,21 @@ type DocumentReference struct {
 	RelatesTo         []DocumentReferenceRelatesTo `bson:"relatesTo,omitempty" json:"relatesTo,omitempty"`
 	Description       *string                      `bson:"description,omitempty" json:"description,omitempty"`
 	SecurityLabel     []CodeableConcept            `bson:"securityLabel,omitempty" json:"securityLabel,omitempty"`
-	Content           []DocumentReferenceContent   `bson:"content,omitempty" json:"content,omitempty"`
+	Content           []DocumentReferenceContent   `bson:"content" json:"content"`
 	Context           *DocumentReferenceContext    `bson:"context,omitempty" json:"context,omitempty"`
 }
 type DocumentReferenceRelatesTo struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              DocumentRelationshipType `bson:"code,omitempty" json:"code,omitempty"`
-	Target            Reference                `bson:"target,omitempty" json:"target,omitempty"`
+	Code              DocumentRelationshipType `bson:"code" json:"code"`
+	Target            Reference                `bson:"target" json:"target"`
 }
 type DocumentReferenceContent struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Attachment        Attachment  `bson:"attachment,omitempty" json:"attachment,omitempty"`
+	Attachment        Attachment  `bson:"attachment" json:"attachment"`
 	Format            *Coding     `bson:"format,omitempty" json:"format,omitempty"`
 }
 type DocumentReferenceContext struct {

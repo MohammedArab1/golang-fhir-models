@@ -29,11 +29,11 @@ type ClinicalImpression struct {
 	Extension                []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier               []Identifier                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status                   ClinicalImpressionStatus          `bson:"status,omitempty" json:"status,omitempty"`
+	Status                   ClinicalImpressionStatus          `bson:"status" json:"status"`
 	StatusReason             *CodeableConcept                  `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Code                     *CodeableConcept                  `bson:"code,omitempty" json:"code,omitempty"`
 	Description              *string                           `bson:"description,omitempty" json:"description,omitempty"`
-	Subject                  Reference                         `bson:"subject,omitempty" json:"subject,omitempty"`
+	Subject                  Reference                         `bson:"subject" json:"subject"`
 	Encounter                *Reference                        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	EffectiveDateTime        *string                           `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
 	EffectivePeriod          *Period                           `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
@@ -54,7 +54,7 @@ type ClinicalImpressionInvestigation struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	Code              CodeableConcept `bson:"code" json:"code"`
 	Item              []Reference     `bson:"item,omitempty" json:"item,omitempty"`
 }
 type ClinicalImpressionFinding struct {

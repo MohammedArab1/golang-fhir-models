@@ -26,7 +26,7 @@ type Bundle struct {
 	ImplicitRules *string       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language      *string       `bson:"language,omitempty" json:"language,omitempty"`
 	Identifier    *Identifier   `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type          BundleType    `bson:"type,omitempty" json:"type,omitempty"`
+	Type          BundleType    `bson:"type" json:"type"`
 	Timestamp     *string       `bson:"timestamp,omitempty" json:"timestamp,omitempty"`
 	Total         *int          `bson:"total,omitempty" json:"total,omitempty"`
 	Link          []BundleLink  `bson:"link,omitempty" json:"link,omitempty"`
@@ -37,8 +37,8 @@ type BundleLink struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Relation          string      `bson:"relation,omitempty" json:"relation,omitempty"`
-	Url               string      `bson:"url,omitempty" json:"url,omitempty"`
+	Relation          string      `bson:"relation" json:"relation"`
+	Url               string      `bson:"url" json:"url"`
 }
 type BundleEntry struct {
 	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
@@ -62,8 +62,8 @@ type BundleEntryRequest struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Method            HTTPVerb    `bson:"method,omitempty" json:"method,omitempty"`
-	Url               string      `bson:"url,omitempty" json:"url,omitempty"`
+	Method            HTTPVerb    `bson:"method" json:"method"`
+	Url               string      `bson:"url" json:"url"`
 	IfNoneMatch       *string     `bson:"ifNoneMatch,omitempty" json:"ifNoneMatch,omitempty"`
 	IfModifiedSince   *string     `bson:"ifModifiedSince,omitempty" json:"ifModifiedSince,omitempty"`
 	IfMatch           *string     `bson:"ifMatch,omitempty" json:"ifMatch,omitempty"`
@@ -73,7 +73,7 @@ type BundleEntryResponse struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Status            string          `bson:"status,omitempty" json:"status,omitempty"`
+	Status            string          `bson:"status" json:"status"`
 	Location          *string         `bson:"location,omitempty" json:"location,omitempty"`
 	Etag              *string         `bson:"etag,omitempty" json:"etag,omitempty"`
 	LastModified      *string         `bson:"lastModified,omitempty" json:"lastModified,omitempty"`

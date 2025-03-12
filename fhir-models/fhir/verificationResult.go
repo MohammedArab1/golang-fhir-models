@@ -31,7 +31,7 @@ type VerificationResult struct {
 	Target            []Reference                       `bson:"target,omitempty" json:"target,omitempty"`
 	TargetLocation    []string                          `bson:"targetLocation,omitempty" json:"targetLocation,omitempty"`
 	Need              *CodeableConcept                  `bson:"need,omitempty" json:"need,omitempty"`
-	Status            string                            `bson:"status,omitempty" json:"status,omitempty"`
+	Status            string                            `bson:"status" json:"status"`
 	StatusDate        *string                           `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
 	ValidationType    *CodeableConcept                  `bson:"validationType,omitempty" json:"validationType,omitempty"`
 	ValidationProcess []CodeableConcept                 `bson:"validationProcess,omitempty" json:"validationProcess,omitempty"`
@@ -72,7 +72,7 @@ type VerificationResultValidator struct {
 	Id                   *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Organization         Reference   `bson:"organization,omitempty" json:"organization,omitempty"`
+	Organization         Reference   `bson:"organization" json:"organization"`
 	IdentityCertificate  *string     `bson:"identityCertificate,omitempty" json:"identityCertificate,omitempty"`
 	AttestationSignature *Signature  `bson:"attestationSignature,omitempty" json:"attestationSignature,omitempty"`
 }

@@ -29,13 +29,13 @@ type DeviceMetric struct {
 	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                   `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type              CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
+	Type              CodeableConcept                `bson:"type" json:"type"`
 	Unit              *CodeableConcept               `bson:"unit,omitempty" json:"unit,omitempty"`
 	Source            *Reference                     `bson:"source,omitempty" json:"source,omitempty"`
 	Parent            *Reference                     `bson:"parent,omitempty" json:"parent,omitempty"`
 	OperationalStatus *DeviceMetricOperationalStatus `bson:"operationalStatus,omitempty" json:"operationalStatus,omitempty"`
 	Color             *DeviceMetricColor             `bson:"color,omitempty" json:"color,omitempty"`
-	Category          DeviceMetricCategory           `bson:"category,omitempty" json:"category,omitempty"`
+	Category          DeviceMetricCategory           `bson:"category" json:"category"`
 	MeasurementPeriod *Timing                        `bson:"measurementPeriod,omitempty" json:"measurementPeriod,omitempty"`
 	Calibration       []DeviceMetricCalibration      `bson:"calibration,omitempty" json:"calibration,omitempty"`
 }

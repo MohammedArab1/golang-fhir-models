@@ -29,14 +29,14 @@ type Composition struct {
 	Extension         []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *Identifier            `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            CompositionStatus      `bson:"status,omitempty" json:"status,omitempty"`
-	Type              CodeableConcept        `bson:"type,omitempty" json:"type,omitempty"`
+	Status            CompositionStatus      `bson:"status" json:"status"`
+	Type              CodeableConcept        `bson:"type" json:"type"`
 	Category          []CodeableConcept      `bson:"category,omitempty" json:"category,omitempty"`
 	Subject           *Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter         *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	Date              string                 `bson:"date,omitempty" json:"date,omitempty"`
-	Author            []Reference            `bson:"author,omitempty" json:"author,omitempty"`
-	Title             string                 `bson:"title,omitempty" json:"title,omitempty"`
+	Date              string                 `bson:"date" json:"date"`
+	Author            []Reference            `bson:"author" json:"author"`
+	Title             string                 `bson:"title" json:"title"`
 	Confidentiality   *string                `bson:"confidentiality,omitempty" json:"confidentiality,omitempty"`
 	Attester          []CompositionAttester  `bson:"attester,omitempty" json:"attester,omitempty"`
 	Custodian         *Reference             `bson:"custodian,omitempty" json:"custodian,omitempty"`
@@ -48,7 +48,7 @@ type CompositionAttester struct {
 	Id                *string                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Mode              CompositionAttestationMode `bson:"mode,omitempty" json:"mode,omitempty"`
+	Mode              CompositionAttestationMode `bson:"mode" json:"mode"`
 	Time              *string                    `bson:"time,omitempty" json:"time,omitempty"`
 	Party             *Reference                 `bson:"party,omitempty" json:"party,omitempty"`
 }
@@ -56,9 +56,9 @@ type CompositionRelatesTo struct {
 	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              DocumentRelationshipType `bson:"code,omitempty" json:"code,omitempty"`
-	TargetIdentifier  Identifier               `bson:"targetIdentifier,omitempty" json:"targetIdentifier,omitempty"`
-	TargetReference   Reference                `bson:"targetReference,omitempty" json:"targetReference,omitempty"`
+	Code              DocumentRelationshipType `bson:"code" json:"code"`
+	TargetIdentifier  Identifier               `bson:"targetIdentifier" json:"targetIdentifier"`
+	TargetReference   Reference                `bson:"targetReference" json:"targetReference"`
 }
 type CompositionEvent struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`

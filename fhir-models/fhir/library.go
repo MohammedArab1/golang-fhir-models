@@ -34,9 +34,9 @@ type Library struct {
 	Name                   *string               `bson:"name,omitempty" json:"name,omitempty"`
 	Title                  *string               `bson:"title,omitempty" json:"title,omitempty"`
 	Subtitle               *string               `bson:"subtitle,omitempty" json:"subtitle,omitempty"`
-	Status                 PublicationStatus     `bson:"status,omitempty" json:"status,omitempty"`
+	Status                 PublicationStatus     `bson:"status" json:"status"`
 	Experimental           *bool                 `bson:"experimental,omitempty" json:"experimental,omitempty"`
-	Type                   CodeableConcept       `bson:"type,omitempty" json:"type,omitempty"`
+	Type                   CodeableConcept       `bson:"type" json:"type"`
 	SubjectCodeableConcept *CodeableConcept      `bson:"subjectCodeableConcept,omitempty" json:"subjectCodeableConcept,omitempty"`
 	SubjectReference       *Reference            `bson:"subjectReference,omitempty" json:"subjectReference,omitempty"`
 	Date                   *string               `bson:"date,omitempty" json:"date,omitempty"`

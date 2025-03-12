@@ -34,8 +34,8 @@ type RequestGroup struct {
 	BasedOn               []Reference          `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	Replaces              []Reference          `bson:"replaces,omitempty" json:"replaces,omitempty"`
 	GroupIdentifier       *Identifier          `bson:"groupIdentifier,omitempty" json:"groupIdentifier,omitempty"`
-	Status                RequestStatus        `bson:"status,omitempty" json:"status,omitempty"`
-	Intent                RequestIntent        `bson:"intent,omitempty" json:"intent,omitempty"`
+	Status                RequestStatus        `bson:"status" json:"status"`
+	Intent                RequestIntent        `bson:"intent" json:"intent"`
 	Priority              *RequestPriority     `bson:"priority,omitempty" json:"priority,omitempty"`
 	Code                  *CodeableConcept     `bson:"code,omitempty" json:"code,omitempty"`
 	Subject               *Reference           `bson:"subject,omitempty" json:"subject,omitempty"`
@@ -80,15 +80,15 @@ type RequestGroupActionCondition struct {
 	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Kind              ActionConditionKind `bson:"kind,omitempty" json:"kind,omitempty"`
+	Kind              ActionConditionKind `bson:"kind" json:"kind"`
 	Expression        *Expression         `bson:"expression,omitempty" json:"expression,omitempty"`
 }
 type RequestGroupActionRelatedAction struct {
 	Id                *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ActionId          string                 `bson:"actionId,omitempty" json:"actionId,omitempty"`
-	Relationship      ActionRelationshipType `bson:"relationship,omitempty" json:"relationship,omitempty"`
+	ActionId          string                 `bson:"actionId" json:"actionId"`
+	Relationship      ActionRelationshipType `bson:"relationship" json:"relationship"`
 	OffsetDuration    *Duration              `bson:"offsetDuration,omitempty" json:"offsetDuration,omitempty"`
 	OffsetRange       *Range                 `bson:"offsetRange,omitempty" json:"offsetRange,omitempty"`
 }

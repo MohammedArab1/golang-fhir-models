@@ -29,17 +29,17 @@ type CoverageEligibilityResponse struct {
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier                           `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            FinancialResourceStatusCodes           `bson:"status,omitempty" json:"status,omitempty"`
-	Purpose           []EligibilityResponsePurpose           `bson:"purpose,omitempty" json:"purpose,omitempty"`
-	Patient           Reference                              `bson:"patient,omitempty" json:"patient,omitempty"`
+	Status            FinancialResourceStatusCodes           `bson:"status" json:"status"`
+	Purpose           []EligibilityResponsePurpose           `bson:"purpose" json:"purpose"`
+	Patient           Reference                              `bson:"patient" json:"patient"`
 	ServicedDate      *string                                `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
 	ServicedPeriod    *Period                                `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
-	Created           string                                 `bson:"created,omitempty" json:"created,omitempty"`
+	Created           string                                 `bson:"created" json:"created"`
 	Requestor         *Reference                             `bson:"requestor,omitempty" json:"requestor,omitempty"`
-	Request           Reference                              `bson:"request,omitempty" json:"request,omitempty"`
-	Outcome           ClaimProcessingCodes                   `bson:"outcome,omitempty" json:"outcome,omitempty"`
+	Request           Reference                              `bson:"request" json:"request"`
+	Outcome           ClaimProcessingCodes                   `bson:"outcome" json:"outcome"`
 	Disposition       *string                                `bson:"disposition,omitempty" json:"disposition,omitempty"`
-	Insurer           Reference                              `bson:"insurer,omitempty" json:"insurer,omitempty"`
+	Insurer           Reference                              `bson:"insurer" json:"insurer"`
 	Insurance         []CoverageEligibilityResponseInsurance `bson:"insurance,omitempty" json:"insurance,omitempty"`
 	PreAuthRef        *string                                `bson:"preAuthRef,omitempty" json:"preAuthRef,omitempty"`
 	Form              *CodeableConcept                       `bson:"form,omitempty" json:"form,omitempty"`
@@ -49,7 +49,7 @@ type CoverageEligibilityResponseInsurance struct {
 	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Coverage          Reference                                  `bson:"coverage,omitempty" json:"coverage,omitempty"`
+	Coverage          Reference                                  `bson:"coverage" json:"coverage"`
 	Inforce           *bool                                      `bson:"inforce,omitempty" json:"inforce,omitempty"`
 	BenefitPeriod     *Period                                    `bson:"benefitPeriod,omitempty" json:"benefitPeriod,omitempty"`
 	Item              []CoverageEligibilityResponseInsuranceItem `bson:"item,omitempty" json:"item,omitempty"`
@@ -77,7 +77,7 @@ type CoverageEligibilityResponseInsuranceItemBenefit struct {
 	Id                 *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type               CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	Type               CodeableConcept `bson:"type" json:"type"`
 	AllowedUnsignedInt *int            `bson:"allowedUnsignedInt,omitempty" json:"allowedUnsignedInt,omitempty"`
 	AllowedString      *string         `bson:"allowedString,omitempty" json:"allowedString,omitempty"`
 	AllowedMoney       *Money          `bson:"allowedMoney,omitempty" json:"allowedMoney,omitempty"`
@@ -89,7 +89,7 @@ type CoverageEligibilityResponseError struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
+	Code              CodeableConcept `bson:"code" json:"code"`
 }
 type OtherCoverageEligibilityResponse CoverageEligibilityResponse
 

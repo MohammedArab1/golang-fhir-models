@@ -29,17 +29,17 @@ type MedicationRequest struct {
 	Extension                 []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier                []Identifier                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status                    string                            `bson:"status,omitempty" json:"status,omitempty"`
+	Status                    string                            `bson:"status" json:"status"`
 	StatusReason              *CodeableConcept                  `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
-	Intent                    string                            `bson:"intent,omitempty" json:"intent,omitempty"`
+	Intent                    string                            `bson:"intent" json:"intent"`
 	Category                  []CodeableConcept                 `bson:"category,omitempty" json:"category,omitempty"`
 	Priority                  *RequestPriority                  `bson:"priority,omitempty" json:"priority,omitempty"`
 	DoNotPerform              *bool                             `bson:"doNotPerform,omitempty" json:"doNotPerform,omitempty"`
 	ReportedBoolean           *bool                             `bson:"reportedBoolean,omitempty" json:"reportedBoolean,omitempty"`
 	ReportedReference         *Reference                        `bson:"reportedReference,omitempty" json:"reportedReference,omitempty"`
-	MedicationCodeableConcept CodeableConcept                   `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
-	MedicationReference       Reference                         `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
-	Subject                   Reference                         `bson:"subject,omitempty" json:"subject,omitempty"`
+	MedicationCodeableConcept CodeableConcept                   `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
+	MedicationReference       Reference                         `bson:"medicationReference" json:"medicationReference"`
+	Subject                   Reference                         `bson:"subject" json:"subject"`
 	Encounter                 *Reference                        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	SupportingInformation     []Reference                       `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
 	AuthoredOn                *string                           `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
@@ -86,8 +86,8 @@ type MedicationRequestSubstitution struct {
 	Id                     *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	AllowedBoolean         bool             `bson:"allowedBoolean,omitempty" json:"allowedBoolean,omitempty"`
-	AllowedCodeableConcept CodeableConcept  `bson:"allowedCodeableConcept,omitempty" json:"allowedCodeableConcept,omitempty"`
+	AllowedBoolean         bool             `bson:"allowedBoolean" json:"allowedBoolean"`
+	AllowedCodeableConcept CodeableConcept  `bson:"allowedCodeableConcept" json:"allowedCodeableConcept"`
 	Reason                 *CodeableConcept `bson:"reason,omitempty" json:"reason,omitempty"`
 }
 type OtherMedicationRequest MedicationRequest

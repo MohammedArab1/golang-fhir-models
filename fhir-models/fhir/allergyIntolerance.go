@@ -35,7 +35,7 @@ type AllergyIntolerance struct {
 	Category           []AllergyIntoleranceCategory   `bson:"category,omitempty" json:"category,omitempty"`
 	Criticality        *AllergyIntoleranceCriticality `bson:"criticality,omitempty" json:"criticality,omitempty"`
 	Code               *CodeableConcept               `bson:"code,omitempty" json:"code,omitempty"`
-	Patient            Reference                      `bson:"patient,omitempty" json:"patient,omitempty"`
+	Patient            Reference                      `bson:"patient" json:"patient"`
 	Encounter          *Reference                     `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	OnsetDateTime      *string                        `bson:"onsetDateTime,omitempty" json:"onsetDateTime,omitempty"`
 	OnsetAge           *Age                           `bson:"onsetAge,omitempty" json:"onsetAge,omitempty"`
@@ -54,7 +54,7 @@ type AllergyIntoleranceReaction struct {
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Substance         *CodeableConcept            `bson:"substance,omitempty" json:"substance,omitempty"`
-	Manifestation     []CodeableConcept           `bson:"manifestation,omitempty" json:"manifestation,omitempty"`
+	Manifestation     []CodeableConcept           `bson:"manifestation" json:"manifestation"`
 	Description       *string                     `bson:"description,omitempty" json:"description,omitempty"`
 	Onset             *string                     `bson:"onset,omitempty" json:"onset,omitempty"`
 	Severity          *AllergyIntoleranceSeverity `bson:"severity,omitempty" json:"severity,omitempty"`

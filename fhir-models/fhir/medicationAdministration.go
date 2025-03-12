@@ -31,16 +31,16 @@ type MedicationAdministration struct {
 	Identifier                []Identifier                        `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	Instantiates              []string                            `bson:"instantiates,omitempty" json:"instantiates,omitempty"`
 	PartOf                    []Reference                         `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status                    string                              `bson:"status,omitempty" json:"status,omitempty"`
+	Status                    string                              `bson:"status" json:"status"`
 	StatusReason              []CodeableConcept                   `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Category                  *CodeableConcept                    `bson:"category,omitempty" json:"category,omitempty"`
-	MedicationCodeableConcept CodeableConcept                     `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
-	MedicationReference       Reference                           `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
-	Subject                   Reference                           `bson:"subject,omitempty" json:"subject,omitempty"`
+	MedicationCodeableConcept CodeableConcept                     `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
+	MedicationReference       Reference                           `bson:"medicationReference" json:"medicationReference"`
+	Subject                   Reference                           `bson:"subject" json:"subject"`
 	Context                   *Reference                          `bson:"context,omitempty" json:"context,omitempty"`
 	SupportingInformation     []Reference                         `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
-	EffectiveDateTime         string                              `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
-	EffectivePeriod           Period                              `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
+	EffectiveDateTime         string                              `bson:"effectiveDateTime" json:"effectiveDateTime"`
+	EffectivePeriod           Period                              `bson:"effectivePeriod" json:"effectivePeriod"`
 	Performer                 []MedicationAdministrationPerformer `bson:"performer,omitempty" json:"performer,omitempty"`
 	ReasonCode                []CodeableConcept                   `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference           []Reference                         `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
@@ -55,7 +55,7 @@ type MedicationAdministrationPerformer struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
-	Actor             Reference        `bson:"actor,omitempty" json:"actor,omitempty"`
+	Actor             Reference        `bson:"actor" json:"actor"`
 }
 type MedicationAdministrationDosage struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`

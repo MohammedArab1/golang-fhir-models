@@ -31,12 +31,12 @@ type FamilyMemberHistory struct {
 	Identifier            []Identifier                   `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	InstantiatesCanonical []string                       `bson:"instantiatesCanonical,omitempty" json:"instantiatesCanonical,omitempty"`
 	InstantiatesUri       []string                       `bson:"instantiatesUri,omitempty" json:"instantiatesUri,omitempty"`
-	Status                FamilyHistoryStatus            `bson:"status,omitempty" json:"status,omitempty"`
+	Status                FamilyHistoryStatus            `bson:"status" json:"status"`
 	DataAbsentReason      *CodeableConcept               `bson:"dataAbsentReason,omitempty" json:"dataAbsentReason,omitempty"`
-	Patient               Reference                      `bson:"patient,omitempty" json:"patient,omitempty"`
+	Patient               Reference                      `bson:"patient" json:"patient"`
 	Date                  *string                        `bson:"date,omitempty" json:"date,omitempty"`
 	Name                  *string                        `bson:"name,omitempty" json:"name,omitempty"`
-	Relationship          CodeableConcept                `bson:"relationship,omitempty" json:"relationship,omitempty"`
+	Relationship          CodeableConcept                `bson:"relationship" json:"relationship"`
 	Sex                   *CodeableConcept               `bson:"sex,omitempty" json:"sex,omitempty"`
 	BornPeriod            *Period                        `bson:"bornPeriod,omitempty" json:"bornPeriod,omitempty"`
 	BornDate              *string                        `bson:"bornDate,omitempty" json:"bornDate,omitempty"`
@@ -59,7 +59,7 @@ type FamilyMemberHistoryCondition struct {
 	Id                 *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code               CodeableConcept  `bson:"code,omitempty" json:"code,omitempty"`
+	Code               CodeableConcept  `bson:"code" json:"code"`
 	Outcome            *CodeableConcept `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	ContributedToDeath *bool            `bson:"contributedToDeath,omitempty" json:"contributedToDeath,omitempty"`
 	OnsetAge           *Age             `bson:"onsetAge,omitempty" json:"onsetAge,omitempty"`

@@ -44,7 +44,7 @@ type MedicinalProduct struct {
 	MasterFile                     []Reference                                      `bson:"masterFile,omitempty" json:"masterFile,omitempty"`
 	Contact                        []Reference                                      `bson:"contact,omitempty" json:"contact,omitempty"`
 	ClinicalTrial                  []Reference                                      `bson:"clinicalTrial,omitempty" json:"clinicalTrial,omitempty"`
-	Name                           []MedicinalProductName                           `bson:"name,omitempty" json:"name,omitempty"`
+	Name                           []MedicinalProductName                           `bson:"name" json:"name"`
 	CrossReference                 []Identifier                                     `bson:"crossReference,omitempty" json:"crossReference,omitempty"`
 	ManufacturingBusinessOperation []MedicinalProductManufacturingBusinessOperation `bson:"manufacturingBusinessOperation,omitempty" json:"manufacturingBusinessOperation,omitempty"`
 	SpecialDesignation             []MedicinalProductSpecialDesignation             `bson:"specialDesignation,omitempty" json:"specialDesignation,omitempty"`
@@ -53,7 +53,7 @@ type MedicinalProductName struct {
 	Id                *string                               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ProductName       string                                `bson:"productName,omitempty" json:"productName,omitempty"`
+	ProductName       string                                `bson:"productName" json:"productName"`
 	NamePart          []MedicinalProductNameNamePart        `bson:"namePart,omitempty" json:"namePart,omitempty"`
 	CountryLanguage   []MedicinalProductNameCountryLanguage `bson:"countryLanguage,omitempty" json:"countryLanguage,omitempty"`
 }
@@ -61,16 +61,16 @@ type MedicinalProductNameNamePart struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Part              string      `bson:"part,omitempty" json:"part,omitempty"`
-	Type              Coding      `bson:"type,omitempty" json:"type,omitempty"`
+	Part              string      `bson:"part" json:"part"`
+	Type              Coding      `bson:"type" json:"type"`
 }
 type MedicinalProductNameCountryLanguage struct {
 	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Country           CodeableConcept  `bson:"country,omitempty" json:"country,omitempty"`
+	Country           CodeableConcept  `bson:"country" json:"country"`
 	Jurisdiction      *CodeableConcept `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
-	Language          CodeableConcept  `bson:"language,omitempty" json:"language,omitempty"`
+	Language          CodeableConcept  `bson:"language" json:"language"`
 }
 type MedicinalProductManufacturingBusinessOperation struct {
 	Id                           *string          `bson:"id,omitempty" json:"id,omitempty"`

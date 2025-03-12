@@ -34,12 +34,12 @@ type CarePlan struct {
 	BasedOn               []Reference        `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	Replaces              []Reference        `bson:"replaces,omitempty" json:"replaces,omitempty"`
 	PartOf                []Reference        `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status                RequestStatus      `bson:"status,omitempty" json:"status,omitempty"`
-	Intent                CarePlanIntent     `bson:"intent,omitempty" json:"intent,omitempty"`
+	Status                RequestStatus      `bson:"status" json:"status"`
+	Intent                CarePlanIntent     `bson:"intent" json:"intent"`
 	Category              []CodeableConcept  `bson:"category,omitempty" json:"category,omitempty"`
 	Title                 *string            `bson:"title,omitempty" json:"title,omitempty"`
 	Description           *string            `bson:"description,omitempty" json:"description,omitempty"`
-	Subject               Reference          `bson:"subject,omitempty" json:"subject,omitempty"`
+	Subject               Reference          `bson:"subject" json:"subject"`
 	Encounter             *Reference         `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Period                *Period            `bson:"period,omitempty" json:"period,omitempty"`
 	Created               *string            `bson:"created,omitempty" json:"created,omitempty"`
@@ -73,7 +73,7 @@ type CarePlanActivityDetail struct {
 	ReasonCode             []CodeableConcept      `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference        []Reference            `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
 	Goal                   []Reference            `bson:"goal,omitempty" json:"goal,omitempty"`
-	Status                 CarePlanActivityStatus `bson:"status,omitempty" json:"status,omitempty"`
+	Status                 CarePlanActivityStatus `bson:"status" json:"status"`
 	StatusReason           *CodeableConcept       `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	DoNotPerform           *bool                  `bson:"doNotPerform,omitempty" json:"doNotPerform,omitempty"`
 	ScheduledTiming        *Timing                `bson:"scheduledTiming,omitempty" json:"scheduledTiming,omitempty"`

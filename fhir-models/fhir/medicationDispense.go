@@ -30,12 +30,12 @@ type MedicationDispense struct {
 	ModifierExtension           []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier                  []Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	PartOf                      []Reference                     `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status                      string                          `bson:"status,omitempty" json:"status,omitempty"`
+	Status                      string                          `bson:"status" json:"status"`
 	StatusReasonCodeableConcept *CodeableConcept                `bson:"statusReasonCodeableConcept,omitempty" json:"statusReasonCodeableConcept,omitempty"`
 	StatusReasonReference       *Reference                      `bson:"statusReasonReference,omitempty" json:"statusReasonReference,omitempty"`
 	Category                    *CodeableConcept                `bson:"category,omitempty" json:"category,omitempty"`
-	MedicationCodeableConcept   CodeableConcept                 `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
-	MedicationReference         Reference                       `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
+	MedicationCodeableConcept   CodeableConcept                 `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
+	MedicationReference         Reference                       `bson:"medicationReference" json:"medicationReference"`
 	Subject                     *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
 	Context                     *Reference                      `bson:"context,omitempty" json:"context,omitempty"`
 	SupportingInformation       []Reference                     `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
@@ -60,13 +60,13 @@ type MedicationDispensePerformer struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
-	Actor             Reference        `bson:"actor,omitempty" json:"actor,omitempty"`
+	Actor             Reference        `bson:"actor" json:"actor"`
 }
 type MedicationDispenseSubstitution struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	WasSubstituted    bool              `bson:"wasSubstituted,omitempty" json:"wasSubstituted,omitempty"`
+	WasSubstituted    bool              `bson:"wasSubstituted" json:"wasSubstituted"`
 	Type              *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
 	Reason            []CodeableConcept `bson:"reason,omitempty" json:"reason,omitempty"`
 	ResponsibleParty  []Reference       `bson:"responsibleParty,omitempty" json:"responsibleParty,omitempty"`

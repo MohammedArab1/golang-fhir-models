@@ -23,7 +23,7 @@ import "encoding/json"
 type Extension struct {
 	Id                       *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
-	Url                      string               `bson:"url,omitempty" json:"url,omitempty"`
+	Url                      string               `bson:"url" json:"url"`
 	ValueBase64Binary        *string              `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
 	ValueBoolean             *bool                `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueCanonical           *string              `bson:"valueCanonical,omitempty" json:"valueCanonical,omitempty"`

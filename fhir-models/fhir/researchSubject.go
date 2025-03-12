@@ -29,10 +29,10 @@ type ResearchSubject struct {
 	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            ResearchSubjectStatus `bson:"status,omitempty" json:"status,omitempty"`
+	Status            ResearchSubjectStatus `bson:"status" json:"status"`
 	Period            *Period               `bson:"period,omitempty" json:"period,omitempty"`
-	Study             Reference             `bson:"study,omitempty" json:"study,omitempty"`
-	Individual        Reference             `bson:"individual,omitempty" json:"individual,omitempty"`
+	Study             Reference             `bson:"study" json:"study"`
+	Individual        Reference             `bson:"individual" json:"individual"`
 	AssignedArm       *string               `bson:"assignedArm,omitempty" json:"assignedArm,omitempty"`
 	ActualArm         *string               `bson:"actualArm,omitempty" json:"actualArm,omitempty"`
 	Consent           *Reference            `bson:"consent,omitempty" json:"consent,omitempty"`

@@ -63,15 +63,15 @@ type PatientCommunication struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Language          CodeableConcept `bson:"language,omitempty" json:"language,omitempty"`
+	Language          CodeableConcept `bson:"language" json:"language"`
 	Preferred         *bool           `bson:"preferred,omitempty" json:"preferred,omitempty"`
 }
 type PatientLink struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Other             Reference   `bson:"other,omitempty" json:"other,omitempty"`
-	Type              LinkType    `bson:"type,omitempty" json:"type,omitempty"`
+	Other             Reference   `bson:"other" json:"other"`
+	Type              LinkType    `bson:"type" json:"type"`
 }
 type OtherPatient Patient
 

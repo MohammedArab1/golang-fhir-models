@@ -28,16 +28,16 @@ type AuditEvent struct {
 	Text              *Narrative         `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              Coding             `bson:"type,omitempty" json:"type,omitempty"`
+	Type              Coding             `bson:"type" json:"type"`
 	Subtype           []Coding           `bson:"subtype,omitempty" json:"subtype,omitempty"`
 	Action            *AuditEventAction  `bson:"action,omitempty" json:"action,omitempty"`
 	Period            *Period            `bson:"period,omitempty" json:"period,omitempty"`
-	Recorded          string             `bson:"recorded,omitempty" json:"recorded,omitempty"`
+	Recorded          string             `bson:"recorded" json:"recorded"`
 	Outcome           *AuditEventOutcome `bson:"outcome,omitempty" json:"outcome,omitempty"`
 	OutcomeDesc       *string            `bson:"outcomeDesc,omitempty" json:"outcomeDesc,omitempty"`
 	PurposeOfEvent    []CodeableConcept  `bson:"purposeOfEvent,omitempty" json:"purposeOfEvent,omitempty"`
-	Agent             []AuditEventAgent  `bson:"agent,omitempty" json:"agent,omitempty"`
-	Source            AuditEventSource   `bson:"source,omitempty" json:"source,omitempty"`
+	Agent             []AuditEventAgent  `bson:"agent" json:"agent"`
+	Source            AuditEventSource   `bson:"source" json:"source"`
 	Entity            []AuditEventEntity `bson:"entity,omitempty" json:"entity,omitempty"`
 }
 type AuditEventAgent struct {
@@ -49,7 +49,7 @@ type AuditEventAgent struct {
 	Who               *Reference              `bson:"who,omitempty" json:"who,omitempty"`
 	AltId             *string                 `bson:"altId,omitempty" json:"altId,omitempty"`
 	Name              *string                 `bson:"name,omitempty" json:"name,omitempty"`
-	Requestor         bool                    `bson:"requestor,omitempty" json:"requestor,omitempty"`
+	Requestor         bool                    `bson:"requestor" json:"requestor"`
 	Location          *Reference              `bson:"location,omitempty" json:"location,omitempty"`
 	Policy            []string                `bson:"policy,omitempty" json:"policy,omitempty"`
 	Media             *Coding                 `bson:"media,omitempty" json:"media,omitempty"`
@@ -68,7 +68,7 @@ type AuditEventSource struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Site              *string     `bson:"site,omitempty" json:"site,omitempty"`
-	Observer          Reference   `bson:"observer,omitempty" json:"observer,omitempty"`
+	Observer          Reference   `bson:"observer" json:"observer"`
 	Type              []Coding    `bson:"type,omitempty" json:"type,omitempty"`
 }
 type AuditEventEntity struct {
@@ -89,9 +89,9 @@ type AuditEventEntityDetail struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              string      `bson:"type,omitempty" json:"type,omitempty"`
-	ValueString       string      `bson:"valueString,omitempty" json:"valueString,omitempty"`
-	ValueBase64Binary string      `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
+	Type              string      `bson:"type" json:"type"`
+	ValueString       string      `bson:"valueString" json:"valueString"`
+	ValueBase64Binary string      `bson:"valueBase64Binary" json:"valueBase64Binary"`
 }
 type OtherAuditEvent AuditEvent
 

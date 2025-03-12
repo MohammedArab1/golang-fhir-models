@@ -28,9 +28,9 @@ type MedicinalProductManufactured struct {
 	Text                    *Narrative          `bson:"text,omitempty" json:"text,omitempty"`
 	Extension               []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ManufacturedDoseForm    CodeableConcept     `bson:"manufacturedDoseForm,omitempty" json:"manufacturedDoseForm,omitempty"`
+	ManufacturedDoseForm    CodeableConcept     `bson:"manufacturedDoseForm" json:"manufacturedDoseForm"`
 	UnitOfPresentation      *CodeableConcept    `bson:"unitOfPresentation,omitempty" json:"unitOfPresentation,omitempty"`
-	Quantity                Quantity            `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	Quantity                Quantity            `bson:"quantity" json:"quantity"`
 	Manufacturer            []Reference         `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
 	Ingredient              []Reference         `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
 	PhysicalCharacteristics *ProdCharacteristic `bson:"physicalCharacteristics,omitempty" json:"physicalCharacteristics,omitempty"`

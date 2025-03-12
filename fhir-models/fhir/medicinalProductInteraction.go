@@ -40,8 +40,8 @@ type MedicinalProductInteractionInteractant struct {
 	Id                  *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ItemReference       Reference       `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
-	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
+	ItemReference       Reference       `bson:"itemReference" json:"itemReference"`
+	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept" json:"itemCodeableConcept"`
 }
 type OtherMedicinalProductInteraction MedicinalProductInteraction
 

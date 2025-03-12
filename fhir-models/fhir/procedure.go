@@ -33,11 +33,11 @@ type Procedure struct {
 	InstantiatesUri       []string               `bson:"instantiatesUri,omitempty" json:"instantiatesUri,omitempty"`
 	BasedOn               []Reference            `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	PartOf                []Reference            `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status                EventStatus            `bson:"status,omitempty" json:"status,omitempty"`
+	Status                EventStatus            `bson:"status" json:"status"`
 	StatusReason          *CodeableConcept       `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Category              *CodeableConcept       `bson:"category,omitempty" json:"category,omitempty"`
 	Code                  *CodeableConcept       `bson:"code,omitempty" json:"code,omitempty"`
-	Subject               Reference              `bson:"subject,omitempty" json:"subject,omitempty"`
+	Subject               Reference              `bson:"subject" json:"subject"`
 	Encounter             *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	PerformedDateTime     *string                `bson:"performedDateTime,omitempty" json:"performedDateTime,omitempty"`
 	PerformedPeriod       *Period                `bson:"performedPeriod,omitempty" json:"performedPeriod,omitempty"`
@@ -66,7 +66,7 @@ type ProcedurePerformer struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
-	Actor             Reference        `bson:"actor,omitempty" json:"actor,omitempty"`
+	Actor             Reference        `bson:"actor" json:"actor"`
 	OnBehalfOf        *Reference       `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
 }
 type ProcedureFocalDevice struct {
@@ -74,7 +74,7 @@ type ProcedureFocalDevice struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Action            *CodeableConcept `bson:"action,omitempty" json:"action,omitempty"`
-	Manipulated       Reference        `bson:"manipulated,omitempty" json:"manipulated,omitempty"`
+	Manipulated       Reference        `bson:"manipulated" json:"manipulated"`
 }
 type OtherProcedure Procedure
 

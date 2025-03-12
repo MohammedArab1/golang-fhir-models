@@ -30,10 +30,10 @@ type OperationDefinition struct {
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Url               *string                        `bson:"url,omitempty" json:"url,omitempty"`
 	Version           *string                        `bson:"version,omitempty" json:"version,omitempty"`
-	Name              string                         `bson:"name,omitempty" json:"name,omitempty"`
+	Name              string                         `bson:"name" json:"name"`
 	Title             *string                        `bson:"title,omitempty" json:"title,omitempty"`
-	Status            PublicationStatus              `bson:"status,omitempty" json:"status,omitempty"`
-	Kind              OperationKind                  `bson:"kind,omitempty" json:"kind,omitempty"`
+	Status            PublicationStatus              `bson:"status" json:"status"`
+	Kind              OperationKind                  `bson:"kind" json:"kind"`
 	Experimental      *bool                          `bson:"experimental,omitempty" json:"experimental,omitempty"`
 	Date              *string                        `bson:"date,omitempty" json:"date,omitempty"`
 	Publisher         *string                        `bson:"publisher,omitempty" json:"publisher,omitempty"`
@@ -43,13 +43,13 @@ type OperationDefinition struct {
 	Jurisdiction      []CodeableConcept              `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
 	Purpose           *string                        `bson:"purpose,omitempty" json:"purpose,omitempty"`
 	AffectsState      *bool                          `bson:"affectsState,omitempty" json:"affectsState,omitempty"`
-	Code              string                         `bson:"code,omitempty" json:"code,omitempty"`
+	Code              string                         `bson:"code" json:"code"`
 	Comment           *string                        `bson:"comment,omitempty" json:"comment,omitempty"`
 	Base              *string                        `bson:"base,omitempty" json:"base,omitempty"`
 	Resource          []ResourceType                 `bson:"resource,omitempty" json:"resource,omitempty"`
-	System            bool                           `bson:"system,omitempty" json:"system,omitempty"`
-	Type              bool                           `bson:"type,omitempty" json:"type,omitempty"`
-	Instance          bool                           `bson:"instance,omitempty" json:"instance,omitempty"`
+	System            bool                           `bson:"system" json:"system"`
+	Type              bool                           `bson:"type" json:"type"`
+	Instance          bool                           `bson:"instance" json:"instance"`
 	InputProfile      *string                        `bson:"inputProfile,omitempty" json:"inputProfile,omitempty"`
 	OutputProfile     *string                        `bson:"outputProfile,omitempty" json:"outputProfile,omitempty"`
 	Parameter         []OperationDefinitionParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
@@ -59,10 +59,10 @@ type OperationDefinitionParameter struct {
 	Id                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Name              string                                       `bson:"name,omitempty" json:"name,omitempty"`
-	Use               OperationParameterUse                        `bson:"use,omitempty" json:"use,omitempty"`
-	Min               int                                          `bson:"min,omitempty" json:"min,omitempty"`
-	Max               string                                       `bson:"max,omitempty" json:"max,omitempty"`
+	Name              string                                       `bson:"name" json:"name"`
+	Use               OperationParameterUse                        `bson:"use" json:"use"`
+	Min               int                                          `bson:"min" json:"min"`
+	Max               string                                       `bson:"max" json:"max"`
 	Documentation     *string                                      `bson:"documentation,omitempty" json:"documentation,omitempty"`
 	Type              *string                                      `bson:"type,omitempty" json:"type,omitempty"`
 	TargetProfile     []string                                     `bson:"targetProfile,omitempty" json:"targetProfile,omitempty"`
@@ -75,14 +75,14 @@ type OperationDefinitionParameterBinding struct {
 	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Strength          BindingStrength `bson:"strength,omitempty" json:"strength,omitempty"`
-	ValueSet          string          `bson:"valueSet,omitempty" json:"valueSet,omitempty"`
+	Strength          BindingStrength `bson:"strength" json:"strength"`
+	ValueSet          string          `bson:"valueSet" json:"valueSet"`
 }
 type OperationDefinitionParameterReferencedFrom struct {
 	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Source            string      `bson:"source,omitempty" json:"source,omitempty"`
+	Source            string      `bson:"source" json:"source"`
 	SourceId          *string     `bson:"sourceId,omitempty" json:"sourceId,omitempty"`
 }
 type OperationDefinitionOverload struct {

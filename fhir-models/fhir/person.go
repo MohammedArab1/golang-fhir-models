@@ -43,7 +43,7 @@ type PersonLink struct {
 	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Target            Reference               `bson:"target,omitempty" json:"target,omitempty"`
+	Target            Reference               `bson:"target" json:"target"`
 	Assurance         *IdentityAssuranceLevel `bson:"assurance,omitempty" json:"assurance,omitempty"`
 }
 type OtherPerson Person

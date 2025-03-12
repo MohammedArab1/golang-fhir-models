@@ -25,7 +25,7 @@ type Binary struct {
 	Meta            *Meta      `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules   *string    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language        *string    `bson:"language,omitempty" json:"language,omitempty"`
-	ContentType     string     `bson:"contentType,omitempty" json:"contentType,omitempty"`
+	ContentType     string     `bson:"contentType" json:"contentType"`
 	SecurityContext *Reference `bson:"securityContext,omitempty" json:"securityContext,omitempty"`
 	Data            *string    `bson:"data,omitempty" json:"data,omitempty"`
 }

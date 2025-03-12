@@ -28,19 +28,19 @@ type Subscription struct {
 	Text              *Narrative          `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Status            SubscriptionStatus  `bson:"status,omitempty" json:"status,omitempty"`
+	Status            SubscriptionStatus  `bson:"status" json:"status"`
 	Contact           []ContactPoint      `bson:"contact,omitempty" json:"contact,omitempty"`
 	End               *string             `bson:"end,omitempty" json:"end,omitempty"`
-	Reason            string              `bson:"reason,omitempty" json:"reason,omitempty"`
-	Criteria          string              `bson:"criteria,omitempty" json:"criteria,omitempty"`
+	Reason            string              `bson:"reason" json:"reason"`
+	Criteria          string              `bson:"criteria" json:"criteria"`
 	Error             *string             `bson:"error,omitempty" json:"error,omitempty"`
-	Channel           SubscriptionChannel `bson:"channel,omitempty" json:"channel,omitempty"`
+	Channel           SubscriptionChannel `bson:"channel" json:"channel"`
 }
 type SubscriptionChannel struct {
 	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              SubscriptionChannelType `bson:"type,omitempty" json:"type,omitempty"`
+	Type              SubscriptionChannelType `bson:"type" json:"type"`
 	Endpoint          *string                 `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
 	Payload           *string                 `bson:"payload,omitempty" json:"payload,omitempty"`
 	Header            []string                `bson:"header,omitempty" json:"header,omitempty"`

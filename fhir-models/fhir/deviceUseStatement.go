@@ -30,15 +30,15 @@ type DeviceUseStatement struct {
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier             `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	BasedOn           []Reference              `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
-	Status            DeviceUseStatementStatus `bson:"status,omitempty" json:"status,omitempty"`
-	Subject           Reference                `bson:"subject,omitempty" json:"subject,omitempty"`
+	Status            DeviceUseStatementStatus `bson:"status" json:"status"`
+	Subject           Reference                `bson:"subject" json:"subject"`
 	DerivedFrom       []Reference              `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
 	TimingTiming      *Timing                  `bson:"timingTiming,omitempty" json:"timingTiming,omitempty"`
 	TimingPeriod      *Period                  `bson:"timingPeriod,omitempty" json:"timingPeriod,omitempty"`
 	TimingDateTime    *string                  `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
 	RecordedOn        *string                  `bson:"recordedOn,omitempty" json:"recordedOn,omitempty"`
 	Source            *Reference               `bson:"source,omitempty" json:"source,omitempty"`
-	Device            Reference                `bson:"device,omitempty" json:"device,omitempty"`
+	Device            Reference                `bson:"device" json:"device"`
 	ReasonCode        []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference   []Reference              `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
 	BodySite          *CodeableConcept         `bson:"bodySite,omitempty" json:"bodySite,omitempty"`

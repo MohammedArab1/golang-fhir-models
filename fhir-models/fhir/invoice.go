@@ -29,7 +29,7 @@ type Invoice struct {
 	Extension           []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier          []Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status              InvoiceStatus                   `bson:"status,omitempty" json:"status,omitempty"`
+	Status              InvoiceStatus                   `bson:"status" json:"status"`
 	CancelledReason     *string                         `bson:"cancelledReason,omitempty" json:"cancelledReason,omitempty"`
 	Type                *CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
 	Subject             *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
@@ -50,22 +50,22 @@ type InvoiceParticipant struct {
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Role              *CodeableConcept `bson:"role,omitempty" json:"role,omitempty"`
-	Actor             Reference        `bson:"actor,omitempty" json:"actor,omitempty"`
+	Actor             Reference        `bson:"actor" json:"actor"`
 }
 type InvoiceLineItem struct {
 	Id                        *string                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                  *int                            `bson:"sequence,omitempty" json:"sequence,omitempty"`
-	ChargeItemReference       Reference                       `bson:"chargeItemReference,omitempty" json:"chargeItemReference,omitempty"`
-	ChargeItemCodeableConcept CodeableConcept                 `bson:"chargeItemCodeableConcept,omitempty" json:"chargeItemCodeableConcept,omitempty"`
+	ChargeItemReference       Reference                       `bson:"chargeItemReference" json:"chargeItemReference"`
+	ChargeItemCodeableConcept CodeableConcept                 `bson:"chargeItemCodeableConcept" json:"chargeItemCodeableConcept"`
 	PriceComponent            []InvoiceLineItemPriceComponent `bson:"priceComponent,omitempty" json:"priceComponent,omitempty"`
 }
 type InvoiceLineItemPriceComponent struct {
 	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              InvoicePriceComponentType `bson:"type,omitempty" json:"type,omitempty"`
+	Type              InvoicePriceComponentType `bson:"type" json:"type"`
 	Code              *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
 	Factor            *json.Number              `bson:"factor,omitempty" json:"factor,omitempty"`
 	Amount            *Money                    `bson:"amount,omitempty" json:"amount,omitempty"`

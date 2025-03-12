@@ -29,10 +29,10 @@ type Flag struct {
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            FlagStatus        `bson:"status,omitempty" json:"status,omitempty"`
+	Status            FlagStatus        `bson:"status" json:"status"`
 	Category          []CodeableConcept `bson:"category,omitempty" json:"category,omitempty"`
-	Code              CodeableConcept   `bson:"code,omitempty" json:"code,omitempty"`
-	Subject           Reference         `bson:"subject,omitempty" json:"subject,omitempty"`
+	Code              CodeableConcept   `bson:"code" json:"code"`
+	Subject           Reference         `bson:"subject" json:"subject"`
 	Period            *Period           `bson:"period,omitempty" json:"period,omitempty"`
 	Encounter         *Reference        `bson:"encounter,omitempty" json:"encounter,omitempty"`
 	Author            *Reference        `bson:"author,omitempty" json:"author,omitempty"`

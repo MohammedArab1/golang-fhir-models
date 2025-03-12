@@ -56,15 +56,15 @@ type InsurancePlanCoverage struct {
 	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
+	Type              CodeableConcept                `bson:"type" json:"type"`
 	Network           []Reference                    `bson:"network,omitempty" json:"network,omitempty"`
-	Benefit           []InsurancePlanCoverageBenefit `bson:"benefit,omitempty" json:"benefit,omitempty"`
+	Benefit           []InsurancePlanCoverageBenefit `bson:"benefit" json:"benefit"`
 }
 type InsurancePlanCoverageBenefit struct {
 	Id                *string                             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept                     `bson:"type,omitempty" json:"type,omitempty"`
+	Type              CodeableConcept                     `bson:"type" json:"type"`
 	Requirement       *string                             `bson:"requirement,omitempty" json:"requirement,omitempty"`
 	Limit             []InsurancePlanCoverageBenefitLimit `bson:"limit,omitempty" json:"limit,omitempty"`
 }
@@ -99,21 +99,21 @@ type InsurancePlanPlanSpecificCost struct {
 	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Category          CodeableConcept                        `bson:"category,omitempty" json:"category,omitempty"`
+	Category          CodeableConcept                        `bson:"category" json:"category"`
 	Benefit           []InsurancePlanPlanSpecificCostBenefit `bson:"benefit,omitempty" json:"benefit,omitempty"`
 }
 type InsurancePlanPlanSpecificCostBenefit struct {
 	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept                            `bson:"type,omitempty" json:"type,omitempty"`
+	Type              CodeableConcept                            `bson:"type" json:"type"`
 	Cost              []InsurancePlanPlanSpecificCostBenefitCost `bson:"cost,omitempty" json:"cost,omitempty"`
 }
 type InsurancePlanPlanSpecificCostBenefitCost struct {
 	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              CodeableConcept   `bson:"type,omitempty" json:"type,omitempty"`
+	Type              CodeableConcept   `bson:"type" json:"type"`
 	Applicability     *CodeableConcept  `bson:"applicability,omitempty" json:"applicability,omitempty"`
 	Qualifiers        []CodeableConcept `bson:"qualifiers,omitempty" json:"qualifiers,omitempty"`
 	Value             *Quantity         `bson:"value,omitempty" json:"value,omitempty"`

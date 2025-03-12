@@ -29,15 +29,15 @@ type Endpoint struct {
 	Extension            []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier           []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status               EndpointStatus    `bson:"status,omitempty" json:"status,omitempty"`
-	ConnectionType       Coding            `bson:"connectionType,omitempty" json:"connectionType,omitempty"`
+	Status               EndpointStatus    `bson:"status" json:"status"`
+	ConnectionType       Coding            `bson:"connectionType" json:"connectionType"`
 	Name                 *string           `bson:"name,omitempty" json:"name,omitempty"`
 	ManagingOrganization *Reference        `bson:"managingOrganization,omitempty" json:"managingOrganization,omitempty"`
 	Contact              []ContactPoint    `bson:"contact,omitempty" json:"contact,omitempty"`
 	Period               *Period           `bson:"period,omitempty" json:"period,omitempty"`
-	PayloadType          []CodeableConcept `bson:"payloadType,omitempty" json:"payloadType,omitempty"`
+	PayloadType          []CodeableConcept `bson:"payloadType" json:"payloadType"`
 	PayloadMimeType      []string          `bson:"payloadMimeType,omitempty" json:"payloadMimeType,omitempty"`
-	Address              string            `bson:"address,omitempty" json:"address,omitempty"`
+	Address              string            `bson:"address" json:"address"`
 	Header               []string          `bson:"header,omitempty" json:"header,omitempty"`
 }
 type OtherEndpoint Endpoint

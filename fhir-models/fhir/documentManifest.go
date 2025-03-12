@@ -30,7 +30,7 @@ type DocumentManifest struct {
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	MasterIdentifier  *Identifier               `bson:"masterIdentifier,omitempty" json:"masterIdentifier,omitempty"`
 	Identifier        []Identifier              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            DocumentReferenceStatus   `bson:"status,omitempty" json:"status,omitempty"`
+	Status            DocumentReferenceStatus   `bson:"status" json:"status"`
 	Type              *CodeableConcept          `bson:"type,omitempty" json:"type,omitempty"`
 	Subject           *Reference                `bson:"subject,omitempty" json:"subject,omitempty"`
 	Created           *string                   `bson:"created,omitempty" json:"created,omitempty"`
@@ -38,7 +38,7 @@ type DocumentManifest struct {
 	Recipient         []Reference               `bson:"recipient,omitempty" json:"recipient,omitempty"`
 	Source            *string                   `bson:"source,omitempty" json:"source,omitempty"`
 	Description       *string                   `bson:"description,omitempty" json:"description,omitempty"`
-	Content           []Reference               `bson:"content,omitempty" json:"content,omitempty"`
+	Content           []Reference               `bson:"content" json:"content"`
 	Related           []DocumentManifestRelated `bson:"related,omitempty" json:"related,omitempty"`
 }
 type DocumentManifestRelated struct {

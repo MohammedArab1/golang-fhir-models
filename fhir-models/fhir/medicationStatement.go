@@ -31,12 +31,12 @@ type MedicationStatement struct {
 	Identifier                []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
 	BasedOn                   []Reference       `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
 	PartOf                    []Reference       `bson:"partOf,omitempty" json:"partOf,omitempty"`
-	Status                    string            `bson:"status,omitempty" json:"status,omitempty"`
+	Status                    string            `bson:"status" json:"status"`
 	StatusReason              []CodeableConcept `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Category                  *CodeableConcept  `bson:"category,omitempty" json:"category,omitempty"`
-	MedicationCodeableConcept CodeableConcept   `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
-	MedicationReference       Reference         `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
-	Subject                   Reference         `bson:"subject,omitempty" json:"subject,omitempty"`
+	MedicationCodeableConcept CodeableConcept   `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
+	MedicationReference       Reference         `bson:"medicationReference" json:"medicationReference"`
+	Subject                   Reference         `bson:"subject" json:"subject"`
 	Context                   *Reference        `bson:"context,omitempty" json:"context,omitempty"`
 	EffectiveDateTime         *string           `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
 	EffectivePeriod           *Period           `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
