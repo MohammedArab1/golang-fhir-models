@@ -101,7 +101,7 @@ type CodeSystemConceptProperty struct {
 	ValueCoding       *Coding     `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
 	ValueString       string      `bson:"valueString,omitempty" json:"valueString,omitempty"`
 	ValueInteger      int         `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
-	ValueBoolean      bool        `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueBoolean      *bool        `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
 	ValueDateTime     string      `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueDecimal      json.Number `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
 }
